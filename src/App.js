@@ -1,10 +1,23 @@
 import './App.css';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import Home from './Views/Home';
+import Test from './Views/Test';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div>
+      <Router>
+
+        <Link to="/">Home</Link>
+        <Link to="/test">Test</Link>
+
+        <Routes>
+          <Route path="/" element={ <Home/> } />
+          <Route path="/test" element={ <Test/> } />
+        </Routes>
+
+      </Router>
+    </div>
   );
 }
 
