@@ -5,11 +5,27 @@ import Test from './Views/Test';
 import Landing from './Views/Landing';
 import Login from './Views/Login';
 import Register from './Views/Register';
+import React, { useEffect, useState } from 'react';
 
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(()=> {
+      setLoading(false)
+    },1000)
+  },[])
+
   return (
     <div>
+      {loading ? 
+      <Landing
+      loading = {loading}/> 
+      : <Home/>}
+
       <Router>
 
         <Link to="/"></Link>

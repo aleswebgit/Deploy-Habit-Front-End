@@ -8,7 +8,7 @@ test ( 'printed Landing view' ,() => {
     }
 
     render (<Landing />);
-    const view = render (<Landing  image = {landingPic} /> )
+    const view = render (<Landing image = {landingPic} /> )
     console.log(view)
 
 })
