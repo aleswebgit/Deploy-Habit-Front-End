@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import App from '../App';
 
-test('render learn view', () => {
+test('render App view', () => {
   render(<App />);
 });
