@@ -1,9 +1,12 @@
 import React from 'react'
 
-function Button(){
+function Button({text, manageButton}){
     return(
-    <div>Button</div>
-);
+        <button 
+        onClick = { manageButton }>
+            {text}
+        </button>
+    );
 }
 
 export default Button
