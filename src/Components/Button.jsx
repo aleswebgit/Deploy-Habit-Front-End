@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Button({text, manageButton}){
+function Button({text, onClick}){
     return(
         <button 
-        onClick = { manageButton }>
+        onClick = { onClick }>
             {text}
         </button>
     );
