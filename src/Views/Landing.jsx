@@ -1,10 +1,16 @@
-import React from 'react'
-
+import React from 'react';
+import landingPic from '../media/landingPic.png';
 
 function Landing(){
     return(
-        <div>Landing</div>
-    );
-}
+        <img 
+        src={landingPic} 
+        alt="landing"
+        classname = 'landing-pic' />
+    )
+;}
 
-export default Landing
+
+
+
+export default Landing;
