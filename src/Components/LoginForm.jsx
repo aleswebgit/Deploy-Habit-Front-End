@@ -1,10 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Picprofile from '../media/picprofile.png';
 
-function LoginForm(){
+function LoginForm({onClick}){
 
-    const navigate = useNavigate();
 
     return(
         <form  className=" bg-[#F8D1B4] w-80 h-[406px] rounded-[52px] m-auto my-3">
@@ -34,7 +32,7 @@ function LoginForm(){
                     <button 
                         class="flex bg-[#D45C33] rounded-3xl text-center text-white px-9 p-2 m-auto my-8"
                         type='submit' 
-                        onClick={() => navigate("/home")}>
+                        onClick={onClick}>
                         Login
                         </button>
         </form>
