@@ -12,7 +12,7 @@ function App() {
     <div>
       <Router>
 
-        <Link to="/">Home</Link>
+        <Link to="/"></Link>
         <Link to="/home">Home</Link>
         <Link to="/test">Test</Link>
         <Link to="/landing">Landing</Link>
