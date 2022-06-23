@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Button({text, onClick}){
+function Button({children, onClick}){
     return(
         <button 
         onClick = { onClick }>
-            {text}
+            {children}
         </button>
     );
 }
