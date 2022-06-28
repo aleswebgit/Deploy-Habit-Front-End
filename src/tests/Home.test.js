@@ -4,5 +4,4 @@ import Home from '../views/Home'
 
 test ( 'render Home view' ,() => {
     render (<Home />);
-
 })

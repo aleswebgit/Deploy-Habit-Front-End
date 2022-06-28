@@ -6,7 +6,7 @@ function Landing(){
         <img 
         src={landingPic} 
         alt="landing"
-        classname = 'landing-pic' />
+        className = 'landing-pic' />
     )
 ;}
 
