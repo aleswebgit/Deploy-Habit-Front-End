@@ -1,5 +1,4 @@
-import React from 'react';
-import Picprofile from '../media/picprofile.png';
+import Picprofile from '../media/img/picprofile.png';
 
 function LoginForm({onClick}){
 

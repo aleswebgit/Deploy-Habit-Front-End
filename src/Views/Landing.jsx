@@ -1,5 +1,4 @@
-import React from 'react';
-import landingPic from '../media/landingPic.png';
+import landingPic from '../media/img/landingPic.png';
 
 function Landing(){
     return(
