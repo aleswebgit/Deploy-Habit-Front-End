@@ -1,43 +1,44 @@
 import {CgMenuBoxed} from 'react-icons/cg';
-import 'bootstrap/dist/css/bootstrap.css';
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React,{useState} from 'react';
 
 function Navbar(){
-    
-    
-    function NavBar(){
-    
-                // const navigate = useNavigate();
-                const [dropdown, setDropdown] = useState(false);
-        
-                const openCloseDropdown = () => {
-                    setDropdown(!dropdown);
-                }
+
+    const [dropdown, setDropdown] = useState(false);
+
+    const openCloseDropdown = () => {
+        setDropdown(!dropdown);
+    }
     
         return(
     
-            <div className='navbar-container'>
-                <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} >
-                    <DropdownToggle >
-                        <CgMenuBoxed />
+            <nav className='bg-[#FDF6EC] w-full flex relative justify-between items-center mx-auto px-8 h-20'>
+                <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} className = 'display-block h-[48px] w-[48px]'>
+                    <DropdownToggle>
+                        <CgMenuBoxed/>
                     </DropdownToggle >
     
                     <DropdownMenu>
                         <DropdownItem> Home </DropdownItem>
-                        <DropdownItem > Añadir botones </DropdownItem>
-                        <DropdownItem> Añadir contactos </DropdownItem>
+                        <DropdownItem > Registrar Usuarix </DropdownItem>
+                        <DropdownItem> Nutrición </DropdownItem>
+                        <DropdownItem> Sueño </DropdownItem>
+                        <DropdownItem> Ejercicio Físico </DropdownItem>
+                        <DropdownItem> Salud Mental </DropdownItem>
+                        <DropdownItem> Mi perfil </DropdownItem>
                     </DropdownMenu>
-    
                 </Dropdown>
-                <a href="Login">
-                    <img className="profileIcon" src={require('../media/profileIcon.png')} alt="profileIcon" />
+                <button type="button" class="inline-block py-2 px-3 hover:underline rounded-full relative ">
+                    <div class="flex items-center h-5">
+                        <p>Registro nuevo</p>
+                    </div>
+                </button>
+                <a href="Login" className = 'flex mr-4 items-center'>
+                    <img className="h-[48px] w-[48px]" src={require('../media/picprofile.png')} alt="profileIcon" />
                 </a>
-            </div>
+            </nav>
         );
     }
-    
-    export default NavBar;
-}
 
-exporlt default Navbar;
+export default Navbar;

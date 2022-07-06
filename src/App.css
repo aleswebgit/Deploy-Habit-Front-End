@@ -2,6 +2,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body{
+    background-color: #FDF6EC;
+}
+
 h1{
     font-family: 'IBM Plex Mono', monospace;
     font-family: 'Titan One', cursive;
