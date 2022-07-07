@@ -1,11 +1,33 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import Category from '../Components/Category'
+import Landing from '../Views/Landing'
+import Advice from '../Components/Advice'
 
 
-const home = () => {
+const Home = () => {
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(()=> {
+      setLoading(false)
+    },1000)
+  },[])
+
   return (
-    <div className='font-bold'>This comes from HOME!</div>
+    <div>
+      {loading 
+        ? <Landing loading = {loading}/> 
+        : (
+          <>
+            <Category/>
+            <Advice/>
+          </>
+        )}
+    </div>
+    
 
   )
 }
 
-export default home
+export default Home
