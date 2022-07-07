@@ -2,14 +2,19 @@ import {CgMenuBoxed} from 'react-icons/cg';
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React,{useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar(){
+
+    const navigate = useNavigate();
 
     const [dropdown, setDropdown] = useState(false);
 
     const openCloseDropdown = () => {
         setDropdown(!dropdown);
     }
+
+
     
         return(
     
@@ -26,10 +31,8 @@ function Navbar(){
                         <DropdownItem> Mi perfil </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
-                <button type="button" class="py-2 px-3 hover:underline rounded-full relative ">
-                    <div class="flex h-5 text-center">
-                        <p>Registro nuevo</p>
-                    </div>
+                <button type="button" class="py-2 px-3 hover:underline rounded-full relative" onClick={() => navigate("/Home")}>
+                    Registro nuevo
                 </button>
                 <a href="Login" className = 'flex mr-4 items-center'>
                     <img className="h-[48px] w-[48px]" src={require('../media/picprofile.png')} alt="profileIcon" />
