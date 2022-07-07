@@ -10,12 +10,12 @@ function RoutesConfig(){
 
     <Router>
 
-        <Link to="/"></Link>
+        {/* <Link to="/"></Link>
         <Link to="/home"></Link>
         <Link to="/test"></Link>
         <Link to="/landing"></Link>
         <Link to="/login"></Link>
-        <Link to="/register"></Link>
+        <Link to="/register"></Link> */}
 
         <Routes>
             <Route path="/" element={ <Home/> } />
