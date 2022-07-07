@@ -6,11 +6,8 @@ import Navbar from './Components/Navbar.jsx'
 
 function App() {
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 602ae649c72cda354d2d1ae977bc79052a8118e2
   return (
     <div>
       <Navbar/>
