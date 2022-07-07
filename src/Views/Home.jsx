@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Category from '../Components/Category'
 import Landing from '../Views/Landing'
+import Advice from '../Components/Advice'
 
 
 const Home = () => {
@@ -19,8 +20,8 @@ const Home = () => {
         ? <Landing loading = {loading}/> 
         : (
           <>
-          This comes from HOME!
             <Category/>
+            <Advice/>
           </>
         )}
     </div>

@@ -36,11 +36,11 @@ const Category = () => {
   ])
 
   return (
-    <section className='grid grid-flow-col mx-auto'>
+    <section className='grid grid-cols-2 gap-4 p-6'>
       {categories.map( category => {
         return (                        
-          <a href="/section" key={category.name}>
-            <div className=" flex flex-col items-center justify-center bg-[#F8D1B4] w-[130px] aspect-square rounded-[35px]">
+          <a key={category.name} href="/section" className='flex justify-center'>
+            <div className=" flex flex-col items-center justify-center bg-[#F8D1B4] w-[130px] aspect-square rounded-3xl">
               <div className="flex item-center justify-center">
                 {category.icon}
               </div>
