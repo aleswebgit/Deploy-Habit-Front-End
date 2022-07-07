@@ -21,7 +21,7 @@ function LoginForm (){
           <div className='absolute inset-0 z-0 bg-black opacity-10'></div>
         </div>
         <div className='z-20 w-full py-6'>
-          <h1 className='inline-fle my-10 mb-40 h-7 w-auto text-6xl text-orange-700 sm:h-8'>¡Te damos la bienvenida!</h1>
+          <h1 className='inline-fle my-10 mb-40 h-7 w-auto text-5xl text-[#BC4E2A] sm:h-8'>¡Te damos la bienvenida!</h1>
       
           <form  className='mx-auto w-full px-4 sm:w-2/3 lg:px-0'>
             <div className='pb-2 pt-4'>

@@ -19,7 +19,7 @@ function Navbar(){
   return(
     
     <nav className='bg-[#FDF6EC] w-full flex relative justify-between items-center mx-auto px-8 h-20 '>
-      <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} classname = 'border-transparent' >
+      <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} className = 'border-transparent' >
         <DropdownToggle className = 'bg-transparent border-0'>
           <CgMenuBoxed className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
         </DropdownToggle >
