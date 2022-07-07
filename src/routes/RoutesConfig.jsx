@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from '../Views/Home'
 import Landing from '../Views/Landing'
 import Login from '../Views/Login'
-import Register from '../Views/Register'
+import Register from '../Views/UserRegister'
 import Section from '../Views/Section'
 import AdminRegister from '../Views/AdminRegister'
 
