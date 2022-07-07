@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
 import Home from '../Views/Home'
 import Landing from '../Views/Landing'
 import Login from '../Views/Login'
@@ -12,16 +12,10 @@ function RoutesConfig(){
 
     <Router>
 
-      {/* <Link to="/"></Link>
-        <Link to="/home"></Link>
-        <Link to="/test"></Link>
-        <Link to="/landing"></Link>
-        <Link to="/login"></Link>
-        <Link to="/register"></Link> */}
 
       <Routes>
-        <Route path="/" element={ <Home/> } />
-        <Route path="/landing" element={ <Landing/> } />
+        <Route path="/" element={ <Landing/> } />
+        <Route path="/Home" element={ <Home/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/register" element={ <Register/> } />
         <Route path="/section" element={ <Section/> } />

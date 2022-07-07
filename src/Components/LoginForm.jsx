@@ -5,6 +5,7 @@ function LoginForm (){
 
   const navigate = useNavigate()
 
+  // const [categories, setCategories] = useState([]);
 
   return(
     <section className='flex min-h-screen items-stretch text-white'>
