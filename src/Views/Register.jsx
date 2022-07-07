@@ -1,10 +1,9 @@
-import React from 'react'
 import RegisterForm from '../Components/RegisterForm'
 
 function Register(){
-    return(
-        <RegisterForm>Register</RegisterForm>
-    );
+  return(
+    <RegisterForm>Register</RegisterForm>
+  )
 }
 
-export default Register;
+export default Register

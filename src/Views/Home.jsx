@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import Category from '../Components/Category'
-import Landing from '../Views/Landing';
+import Landing from '../Views/Landing'
 
 
 const Home = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true)
@@ -17,12 +17,12 @@ const Home = () => {
     <div>
       {loading 
         ? <Landing loading = {loading}/> 
-      : (
-        <>
+        : (
+          <>
           This comes from HOME!
-          <Category/>
-        </>
-      )}
+            <Category/>
+          </>
+        )}
     </div>
     
 

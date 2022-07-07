@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import RoutesConfig from './routes/RoutesConfig'
 
 
@@ -8,7 +8,7 @@ function App() {
     <div>
       <RoutesConfig />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
