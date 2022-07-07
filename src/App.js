@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <h1 className='flex justify-center text-[#BC4E2A]'>Sobre el proyecto</h1>
+      <h1 className='flex justify-center text-[#BC4E2A]'></h1>
       <RoutesConfig />
     </div>
   )
