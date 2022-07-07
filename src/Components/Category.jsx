@@ -44,9 +44,9 @@ const Category = () => {
               <div className="flex item-center justify-center">
                 {category.icon}
               </div>
-              <h3 className={`${category.color} font-['Titan one']`}>
+              <p className={`${category.color} font-['Titan one']`}>
                 {category.name}
-              </h3>
+              </p>
             </div>
           </a>
         )
