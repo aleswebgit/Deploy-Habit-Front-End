@@ -2,6 +2,17 @@ import Picprofile from '../media/img/picprofile.png'
 
 function LoginForm({onClick}){
 
+  // const [categories, setCategories] = useState([]);
+
+  // const fetchData = async () => {
+  //     const categoriesApi = await fetch('  -->URL LOGIN HERE<--  ')
+  //     const categoriesJson = await categoriesApi.json()
+  //     setCategories(categoriesApi)
+  // }
+
+  // useEffect( () => { 
+  //     fetchData();    
+  // }, [])
 
   return(
     <form  className=" bg-[#F8D1B4] w-80 h-[406px] rounded-[52px] m-auto my-3">
