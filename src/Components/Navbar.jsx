@@ -35,7 +35,7 @@ function Navbar(){
                     Registro nuevo
       </a>
       <a href="Login" className = 'flex mr-4 items-center'>
-        <img className="h-[48px] w-[48px]" src={require('../media/picprofile.png')} alt="profileIcon" />
+        <img className="h-[48px] w-[48px]" src={require('../media/img/picprofile.png')} alt="profileIcon" />
       </a>
     </nav>
   )
