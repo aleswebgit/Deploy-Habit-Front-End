@@ -13,23 +13,20 @@ function Navbar(){
     
         return(
     
-            <nav className='bg-[#FDF6EC] w-full flex relative justify-between items-center mx-auto px-8 h-20'>
-                <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} className = 'display-block h-[48px] w-[48px]'>
-                    <DropdownToggle>
-                        <CgMenuBoxed/>
+            <nav className='bg-[#FDF6EC] w-full flex relative justify-between items-center mx-auto px-8 h-20 '>
+                <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} >
+                    <DropdownToggle className = 'bg-transparent border:none'>
+                        <CgMenuBoxed className = 'display-block h-[48px] w-[48px]'/>
                     </DropdownToggle >
     
                     <DropdownMenu>
                         <DropdownItem> Home </DropdownItem>
-                        <DropdownItem > Registrar Usuarix </DropdownItem>
-                        <DropdownItem> Nutrición </DropdownItem>
-                        <DropdownItem> Sueño </DropdownItem>
-                        <DropdownItem> Ejercicio Físico </DropdownItem>
-                        <DropdownItem> Salud Mental </DropdownItem>
+                        <DropdownItem > Registrar Nuevo </DropdownItem>
+                        <DropdownItem> Categorías </DropdownItem>
                         <DropdownItem> Mi perfil </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
-                <button type="button" class="inline-block py-2 px-3 hover:underline rounded-full relative ">
+                <button type="button" class="py-2 px-3 hover:underline rounded-full relative ">
                     <div class="flex items-center h-5">
                         <p>Registro nuevo</p>
                     </div>
