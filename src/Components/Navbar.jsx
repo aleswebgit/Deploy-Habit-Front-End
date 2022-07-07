@@ -14,9 +14,9 @@ function Navbar(){
         return(
     
             <nav className='bg-[#FDF6EC] w-full flex relative justify-between items-center mx-auto px-8 h-20 '>
-                <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} >
-                    <DropdownToggle className = 'bg-transparent border:none'>
-                        <CgMenuBoxed className = 'display-block h-[48px] w-[48px]'/>
+                <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} classname = 'border-transparent' >
+                    <DropdownToggle className = 'bg-transparent border-0'>
+                        <CgMenuBoxed className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
                     </DropdownToggle >
     
                     <DropdownMenu>
@@ -27,7 +27,7 @@ function Navbar(){
                     </DropdownMenu>
                 </Dropdown>
                 <button type="button" class="py-2 px-3 hover:underline rounded-full relative ">
-                    <div class="flex items-center h-5">
+                    <div class="flex h-5 text-center">
                         <p>Registro nuevo</p>
                     </div>
                 </button>
