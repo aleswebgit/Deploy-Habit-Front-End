@@ -32,7 +32,7 @@ function Navbar(){
         </DropdownMenu>
       </Dropdown>
       <a href="AdminRegister" type="button" className="py-2 px-3 hover:underline rounded-full relative">
-                    Registro nuevo
+          Registro nuevo
       </a>
       <a href="Login" className = 'flex mr-4 items-center'>
         <img className="h-[48px] w-[48px]" src={require('../media/img/picprofile.png')} alt="profileIcon" />
