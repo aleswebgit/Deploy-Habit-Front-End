@@ -19,22 +19,22 @@ function Navbar(){
   return(
     
     <nav className='bg-[#FDF6EC] w-full flex relative justify-between items-center mx-auto px-8 h-20 '>
-      <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} classname = 'border-transparent' >
+      <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} className = 'border-transparent' >
         <DropdownToggle className = 'bg-transparent border-0'>
           <CgMenuBoxed className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
         </DropdownToggle >
     
         <DropdownMenu>
-          <DropdownItem > Home </DropdownItem>
-          <DropdownItem > Registrar Nuevo </DropdownItem>
-          <DropdownItem> Categorías </DropdownItem>
-          <DropdownItem> Mi perfil </DropdownItem>
+          <DropdownItem>Home</DropdownItem>
+          <DropdownItem>Registrar Nuevo</DropdownItem>
+          <DropdownItem>Categorías</DropdownItem>
+          <DropdownItem>Mi perfil</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <a href="AdminRegister" type="button" className="py-2 px-3 hover:underline rounded-full relative">
-                    Registro nuevo
+      <a href="admin-register" type="button" className="py-2 px-3 hover:underline rounded-full relative">
+        Registro nuevo
       </a>
-      <a href="Login" className = 'flex mr-4 items-center'>
+      <a href="login" className = 'flex mr-4 items-center'>
         <img className="h-[48px] w-[48px]" src={require('../media/img/picprofile.png')} alt="profileIcon" />
       </a>
     </nav>
