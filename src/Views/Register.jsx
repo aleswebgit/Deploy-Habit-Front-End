@@ -1,8 +1,13 @@
 import RegisterForm from '../Components/RegisterForm'
+import Navbar from '../Components/Navbar.jsx'
 
 function Register(){
   return(
-    <RegisterForm>Register</RegisterForm>
+
+    <>
+      <Navbar/>
+      <RegisterForm>Register</RegisterForm>
+    </>
   )
 }
 

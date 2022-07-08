@@ -1,16 +1,18 @@
 
 import Category from '../Components/Category'
 import Advice from '../Components/Advice'
-
+import Navbar from '../Components/Navbar.jsx'
 
 function Home() {
   
   return (
-    <div>
-      <Category/>
-      <Advice/>
-    </div>
-    
+    <>
+      <Navbar/>
+      <div>
+        <Category/>
+        <Advice/>
+      </div>
+    </>
 
   )
 }

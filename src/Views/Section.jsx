@@ -1,7 +1,15 @@
 
+import Navbar from '../Components/Navbar.jsx'
+
+
+
+
 const Section = () => {
   return (
-    <div>Section</div>
+    <>
+      <Navbar/>
+      <div>Section</div>
+    </>
   )
 }
 
