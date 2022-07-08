@@ -31,7 +31,7 @@ function Navbar(){
           <DropdownItem>Mi perfil</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <a href="AdminRegister" type="button" className="py-2 px-3 hover:underline rounded-full relative">
+      <a href="admin-register" type="button" className="py-2 px-3 hover:underline rounded-full relative">
           Registro nuevo
       </a>
       <a href="login" className = 'flex mr-4 items-center'>
