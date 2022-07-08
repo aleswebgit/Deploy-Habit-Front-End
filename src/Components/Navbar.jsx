@@ -25,16 +25,16 @@ function Navbar(){
         </DropdownToggle >
     
         <DropdownMenu>
-          <DropdownItem > Home </DropdownItem>
-          <DropdownItem > Registrar Nuevo </DropdownItem>
-          <DropdownItem> Categorías </DropdownItem>
-          <DropdownItem> Mi perfil </DropdownItem>
+          <DropdownItem>Home</DropdownItem>
+          <DropdownItem>Registrar Nuevo</DropdownItem>
+          <DropdownItem>Categorías</DropdownItem>
+          <DropdownItem>Mi perfil</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <a href="AdminRegister" type="button" className="py-2 px-3 hover:underline rounded-full relative">
-                    Registro nuevo
+      <a href="admin-register" type="button" className="py-2 px-3 hover:underline rounded-full relative">
+        Registro nuevo
       </a>
-      <a href="Login" className = 'flex mr-4 items-center'>
+      <a href="login" className = 'flex mr-4 items-center'>
         <img className="h-[48px] w-[48px]" src={require('../media/img/picprofile.png')} alt="profileIcon" />
       </a>
     </nav>
