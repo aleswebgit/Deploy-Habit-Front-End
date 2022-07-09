@@ -1,12 +1,12 @@
 import React from 'react'
 
-function SectionsComponent({children,text, onClick}){
+function SectionsComponent({text,onClick}){
   return(
     <button 
-      className = "flex bg-[#F8D1B4] rounded-3xl w-[336px] justify-center text-[#E57A56] p-2 m-auto my-8"
+      className = "flex bg-[#F8D1B4] rounded-3xl w-[336px] justify-center text-[#E57A56] p-4 m-auto my-8 mt-3 mb-3"
       onClick = { onClick }
-      text ="subapartado uno">
-      {children}
+      text ='subapartado 1'>
+      {text}
     </button>
   )
 }

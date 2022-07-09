@@ -18,7 +18,6 @@ function RoutesConfig(){
         <Route path="/admin-register" element={ <AdminRegister/> } />
       </Routes>
     </Router>
-
   )
 }
 
