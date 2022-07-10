@@ -23,6 +23,7 @@ function LoginForm (){
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
     try {
       const response = await axios.post('/api/auth/signin', 
         JSON.stringify({email, password}), 
@@ -35,7 +36,6 @@ function LoginForm (){
       ).then(response => {
         console.log(response)
       })
-      console.log('YOU ARE LOGGED IN!')
       console.log(JSON.stringify(response?.data))
       setEmail('')
       setPassword('')
@@ -43,12 +43,7 @@ function LoginForm (){
       console.log(error.response)
     }
   }
-
-  useEffect(() => {
-
-  }, [])
   
-
   return(
     <section className='flex min-h-screen items-stretch text-white'>
       
@@ -72,10 +67,10 @@ function LoginForm (){
 
           <form onSubmit={handleSubmit} className='mx-auto w-full px-4 sm:w-2/3 lg:px-0'>
             <div className='pb-2 pt-4'>
-              <input onChange={(e)=>setEmail(e.target.value)} value={email} required ref={userRef} type='email' name='email' id='email' placeholder='Email' className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' />
+              <input onChange={(e)=>setEmail(e.target.value)} value={email} ref={userRef} type='email' name='email' id='email' placeholder='Email' className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' />
             </div>
             <div className='pb-2 pt-4'>
-              <input onChange={(e)=>setPassword(e.target.value)} value={password} required className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' type='password' name='password' id='password' placeholder='Constraseña' />
+              <input onChange={(e)=>setPassword(e.target.value)} value={password} className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' type='password' name='password' id='password' placeholder='Constraseña' />
             </div>
             <div className='px-4 pb-2 pt-4'>
               <button type="submit" className='m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>Acceder</button>
