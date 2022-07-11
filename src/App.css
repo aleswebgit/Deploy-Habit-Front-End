@@ -2,11 +2,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
-    background-color: #FDF6EC;
-}
-
 h1{
     font-family: 'Titan One';
 }
 
+a:link, a:visited,  a:hover, a:active
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+svg,path{
+    width: 60px;
+    height: 60px;
+}
