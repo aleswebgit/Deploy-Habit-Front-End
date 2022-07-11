@@ -10,3 +10,8 @@ h1{
     font-family: 'Titan One';
 }
 
+a:link, a:visited,  a:hover, a:active
+{
+    color: #000000;
+    text-decoration: none;
+}
