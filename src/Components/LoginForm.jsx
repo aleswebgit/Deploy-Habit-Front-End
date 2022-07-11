@@ -1,13 +1,54 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRef, useState, useEffect } from 'react'
+// import { useNavigate } from 'react-router-dom'
+import axios from '../api/axios'
 
 function LoginForm (){
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
+  const userRef = useRef()
+  const errRef = useRef()
+  
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')  
+  const [errorMsg, setErrMsg] = useState('')  
+  
+  useEffect(()=>{
+    userRef.current.focus()
+  },[])
+  
+  useEffect(()=>{
+    setErrMsg('')
+  },[email, password])
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      const response = await axios.post('/api/auth/signin', 
+        JSON.stringify({email, password}), 
+        {
+          headers:{
+            'Content-Type' : 'application/json',
+            'Access-Control-Allow-Origin' : '*' 
+          },
+        }
+      ).then(response => {
+        console.log(response)
+      })
+      console.log(JSON.stringify(response?.data))
+      setEmail('')
+      setPassword('')
+    } catch (error) {
+      console.log(error.response)
+    }
+  }
+  
   return(
     <section className='flex min-h-screen items-stretch text-white'>
+      
+      <p ref={errRef} className={errorMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errorMsg}</p>
+
       <div className='relative hidden w-1/2 items-center bg-cover bg-no-repeat lg:flex bg-[url("https://static.vecteezy.com/system/resources/previews/005/611/051/non_2x/hands-of-different-people-and-hearts-on-a-white-background-tolerance-illustration-free-vector.jpg")] ' >
         <div className='absolute inset-0 z-0 bg-orange-400 opacity-70'>
         </div>
@@ -23,17 +64,20 @@ function LoginForm (){
         <div className='z-20 w-full py-6'>
           <h1 className='inline-fle my-10 mb-40 h-7 w-auto text-5xl text-[#BC4E2A] sm:h-8'>¡Te damos la bienvenida!</h1>
       
-          <form  className='mx-auto w-full px-4 sm:w-2/3 lg:px-0'>
+
+          <form onSubmit={handleSubmit} className='mx-auto w-full px-4 sm:w-2/3 lg:px-0'>
             <div className='pb-2 pt-4'>
-              <input type='email' name='email' id='email' placeholder='Email' className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' />
+              <input onChange={(e)=>setEmail(e.target.value)} value={email} ref={userRef} type='email' name='email' id='email' placeholder='Email' className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' />
             </div>
             <div className='pb-2 pt-4'>
-              <input className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' type='password' name='password' id='password' placeholder='Constraseña' />
+              <input onChange={(e)=>setPassword(e.target.value)} value={password} className='w-full rounded-full bg-orange-300 p-4 text-center text-lg placeholder:text-white' type='password' name='password' id='password' placeholder='Constraseña' />
             </div>
             <div className='px-4 pb-2 pt-4'>
-              <button className='m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none' onClick={() => navigate('/Home')}>Acceder</button>
+              <button type="submit" className='m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>Acceder</button>
+              {/* onClick={() => navigate('/Home')} */}
             </div>
           </form>
+
           <div className='mt-10 text-center font-extralight text-orange-900 hover:text-black hover:underline'>
             <a href='/#'>Problemas con la contraseña?</a>
           </div>
