@@ -5,7 +5,7 @@ import Sport from '../media/icons/Sport'
 import Sleep from '../media/icons/Sleep'
 
 
-const Category = () => {
+const CategoryButton = () => {
 
   const categories = ([
     {
@@ -39,7 +39,7 @@ const Category = () => {
     <section className='grid grid-cols-2 gap-4 p-6'>
       {categories.map( category => {
         return (                        
-          <a key={category.name} href="/section" className='flex justify-center'>
+          <a key={category.name} href="/category" className='flex justify-center'>
             <div className={`${category.bgColor} flex flex-col items-center justify-center w-[130px] aspect-square rounded-3xl`}>
               <div className="flex item-center justify-center">
                 {category.icon}
@@ -55,4 +55,4 @@ const Category = () => {
   )
 }
 
-export default Category
+export default CategoryButton
