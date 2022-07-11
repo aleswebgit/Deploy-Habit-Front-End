@@ -22,10 +22,10 @@ const Home = () => {
           <>
             <Navbar/>
             <h1 className='flex justify-center text-5xl text-center py-2 m-8 text-[#BC4E2A]'>Sobre el proyecto</h1>
-            <div className="sm:flex ">
+            <div className="sm:flex sm:justify-center">
 
               <div className="bg-[#E57A56] rounded-3xl p-5 m-4 sm:max-w-[700px] sm:m-9 text-[#FDF6EC] font-medium">
-                <p className="text-center ">
+                <p className="text-center sm:pt-[250px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor amet, blandit xfdvds molestie viverra nisi. Tellus nam lacus csdcametus, a, enim habitasse neque ut aliquam. Adipiscing tempu askcbaskcb blandit xfdvds molestie viverra nisi. Tellus nam.
                 </p>
                 <a href="" className="block mx-auto w-fit color-[#ffff]">
