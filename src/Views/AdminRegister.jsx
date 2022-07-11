@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
+import Arrow from '../media/icons/Arrow'
 
 
 function AdminRegister(){
@@ -46,8 +47,8 @@ function AdminRegister(){
   return(
     <>
       <Navbar/>
-      
-      <section className = 'mt-20'>
+
+      <section className = 'h-max mt-20 mb-20'>
 
         <p ref={errRef} className={errorMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errorMsg}</p>
 
@@ -73,6 +74,9 @@ function AdminRegister(){
         <p className='flex items-center justify-center py-4 px-12 text-center text-[#BC4E2A]'> Asigna email y contraseña para registrar a una nueva persona </p>
     
       </section>
+      <div className='m-4'>
+        <Arrow />
+      </div>
     </>
   )
 }
