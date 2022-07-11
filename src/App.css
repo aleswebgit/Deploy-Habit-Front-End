@@ -8,7 +8,7 @@ h1{
 
 a:link, a:visited,  a:hover, a:active
 {
-    color: #fff;
+    color: rgb(26, 25, 25);
     text-decoration: none;
 }
 
@@ -16,3 +16,4 @@ svg,path{
     width: 60px;
     height: 60px;
 }
+
