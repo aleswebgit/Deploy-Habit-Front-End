@@ -19,7 +19,7 @@ function RoutesConfig(){
         <Route path="/category" element={ <Category/> } />
         <Route path="/section/:id" element={ <Section/> } />
         <Route path="/admin-register" element={ <AdminRegister/> } />
-        <Route path="/profile/:id" element={ <Profile/> } />
+        <Route path="/register" element={ <Profile/> } />
       </Routes>
     </Router>
   )
