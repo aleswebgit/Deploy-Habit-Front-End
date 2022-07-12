@@ -4,6 +4,7 @@ import Login from '../Views/Login'
 import UserRegister from '../Views/UserRegister'
 import Category from '../Views/Category'
 import AdminRegister from '../Views/AdminRegister'
+import Profile from '../Views/Profile'
 
 
 function RoutesConfig(){
@@ -16,6 +17,7 @@ function RoutesConfig(){
         <Route path="/register" element={ <UserRegister/> } />
         <Route path="/category" element={ <Category/> } />
         <Route path="/admin-register" element={ <AdminRegister/> } />
+        <Route path="/profile/:id" element={ <Profile/> } />
       </Routes>
     </Router>
   )

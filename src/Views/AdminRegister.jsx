@@ -35,6 +35,9 @@ function AdminRegister(){
         }
       ).then(response => {
         console.log(response)
+        // console.log(response.data.message)
+        // console.log(response.data.token)
+        localStorage.setItem('token', response.data.token)
       })
       console.log(JSON.stringify(response?.data))
       setEmail('')

@@ -6,7 +6,10 @@ const Advice = () => {
         <p className="text-sm text-[#BC4E2A]">
           Si tienes alguna duda, y quieres la respuesta de forma personalizada, puedes escribirnos en el siguiente enlace:
         </p>
-        <a className=" bg-white rounded-3xl text-sm sm:text-lg font-bold py-1 px-4 text-[#BC4E2A]">
+        <a 
+          href="mailto:yourwebsolutions3000@gmail.com?subject=Consulta web Habitos"
+          className="bg-white rounded-3xl text-sm sm:text-lg font-bold py-1 px-4 text-[#BC4E2A]"
+        >
           Hacer Consulta
         </a>
       </div>
