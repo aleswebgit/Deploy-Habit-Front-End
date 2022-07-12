@@ -24,6 +24,13 @@ function AdminRegister(){
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    const newRegisteredUser = {
+      email,
+      password
+    }
+    console.log(newRegisteredUser)
+
+
     try {
       const response = await axios.post('/api/auth/signup', 
         JSON.stringify({email, password}), 
