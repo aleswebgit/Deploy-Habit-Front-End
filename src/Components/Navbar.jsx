@@ -26,7 +26,7 @@ function Navbar(){
           <DropdownItem onClick={() => navigate('/')}>Home</DropdownItem>
           <DropdownItem onClick={() => navigate('/admin-register')}>Registrar Nuevo</DropdownItem>
           <DropdownItem onClick={() => navigate('/category')}>Categorías</DropdownItem>
-          <DropdownItem onClick={() => navigate('/profile/:id')}>Mi perfil</DropdownItem>
+          <DropdownItem onClick={() => navigate('/register')}>Mi perfil</DropdownItem>
         </DropdownMenu>
       </Dropdown>
       <a href="admin-register" type="button" className="py-2 px-3 hover:underline rounded-full relative">
