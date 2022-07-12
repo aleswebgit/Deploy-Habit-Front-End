@@ -84,9 +84,6 @@ function AdminRegister(){
           </div>
         </div>
         <p className='flex items-center justify-center py-4 px-12 text-center text-[#BC4E2A]'> Asigna email y contraseña para registrar a una nueva persona </p>
-        <a href={`mailto:${email}?&subject=Info%20de%20tu%20cuenta%20de%20caritas&body=Esta%20es%20tu%20email:%20${email}%20y%20tu%20contraseña:%20${password}`} className="bg-white rounded-3xl text-sm sm:text-lg font-bold py-1 px-4 text-[#BC4E2A]">
-          ENVIAR A USUARIX
-        </a>
       </section>
       <div className='m-4'>
         <Arrow />
