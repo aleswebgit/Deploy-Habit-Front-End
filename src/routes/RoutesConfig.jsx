@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
 import Home from '../Views/Home'
 import Login from '../Views/Login'
 import UserRegister from '../Views/UserRegister'
-import Section from '../Views/Section'
+import Category from '../Views/Category'
 import AdminRegister from '../Views/AdminRegister'
 
 
@@ -14,7 +14,7 @@ function RoutesConfig(){
         <Route path="/" element={ <Home/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/register" element={ <UserRegister/> } />
-        <Route path="/section" element={ <Section/> } />
+        <Route path="/category" element={ <Category/> } />
         <Route path="/admin-register" element={ <AdminRegister/> } />
       </Routes>
     </Router>

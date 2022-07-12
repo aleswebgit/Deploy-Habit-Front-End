@@ -5,7 +5,7 @@ import Sport from '../media/icons/Sport'
 import Sleep from '../media/icons/Sleep'
 
 
-const Category = () => {
+const CategoryButton = () => {
 
   const categories = ([
     {
@@ -55,4 +55,4 @@ const Category = () => {
   )
 }
 
-export default Category
+export default CategoryButton
