@@ -66,7 +66,7 @@ function AdminRegister(){
 
         <div className='m-auto w-[313px] rounded-3xl bg-[#F8D1B4]'>
           <div className='p-6'>
-            <h1 className='flex items-center justify-center p-14 px-2 text-center text-3xl font-bold text-[#BC4E2A]'>Registro nuevo usuarix</h1>
+            <h1 className='flex items-center justify-center p-14 px-2 text-center text-3xl font-bold text-[#BC4E2A]'>Alta nueva en el sistema</h1>
           
             <form onSubmit={handleSubmit}>
               <label htmlFor='email' className='block w-[269px]'>

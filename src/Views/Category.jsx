@@ -4,7 +4,6 @@ import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
 import SectionButton from '../Components/SectionButton'
 
-
 const Category = () => {
   const selectCategory = useParams().id
   const navigate = useNavigate()
