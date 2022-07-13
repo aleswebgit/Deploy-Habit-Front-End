@@ -32,7 +32,7 @@ function Navbar(){
           <CgMenuBoxed className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
         </DropdownToggle >
     
-        <DropdownMenu aria-expanded>
+        <DropdownMenu aria-expanded aria-label='menu desplegable'>
           <DropdownItem aria-level={1} onClick={() => navigate('/')}>Página principal</DropdownItem>
           <DropdownItem aria-level={2} onClick={() => navigate('/admin-register')}>Alta nueva en el sistema</DropdownItem>
           <DropdownItem aria-level={3} onClick={() => navigate('/category/:1')}>Sueño</DropdownItem>
@@ -41,10 +41,10 @@ function Navbar(){
           <DropdownItem aria-level={6} onClick={() => navigate('/category/:4')}>Salud Mental</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <CgUserAdd type='button' className='text-[#BC4E2A] display-block h-[48px] w-[48px]' onClick={() => navigate('/admin-register')}  />
+      <CgUserAdd role="button" aria-label='añadir un usuario' type='button' className='text-[#BC4E2A] display-block h-[48px] w-[48px]' onClick={() => navigate('/admin-register')}  />
       <Dropdown isOpen = {dropdownR} toggle = {openCloseDropdownR} className = 'border-transparent ' >
         <DropdownToggle className = 'bg-transparent border-0 '>
-          <BiUserCircle className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
+          <BiUserCircle aria-label='icono de usuario' className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
         </DropdownToggle >
         <DropdownMenu aria-expanded>
           <DropdownItem aria-level={1} onClick={() => navigate('/login')}>Conectar</DropdownItem>
