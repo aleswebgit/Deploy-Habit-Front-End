@@ -48,7 +48,7 @@ function Navbar(){
         </DropdownToggle >
         <DropdownMenu aria-expanded>
           <DropdownItem aria-level={1} onClick={() => navigate('/login')}>Conectar</DropdownItem>
-          <DropdownItem aria-level={2} onClick={() => navigate('/profile/:id')}>Mi perfil</DropdownItem>
+          <DropdownItem aria-level={2} onClick={() => navigate('/profile/id')}>Mi perfil</DropdownItem>
           <DropdownItem aria-level={3} onClick={() => navigate('/')}>Desconectar</DropdownItem>
         </DropdownMenu>
       </Dropdown>

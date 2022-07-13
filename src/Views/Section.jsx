@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Navbar } from 'reactstrap'
 import axios from '../api/axios'
+import Navbar from '../Components/Navbar'
+
 
 
 const Section =() => {
