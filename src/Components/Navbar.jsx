@@ -22,11 +22,11 @@ function Navbar(){
           <CgMenuBoxed className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
         </DropdownToggle >
     
-        <DropdownMenu>
-          <DropdownItem onClick={() => navigate('/')}>Home</DropdownItem>
-          <DropdownItem onClick={() => navigate('/admin-register')}>Registrar Nuevo</DropdownItem>
-          <DropdownItem onClick={() => navigate('/category')}>Categorías</DropdownItem>
-          <DropdownItem onClick={() => navigate('/register')}>Mi perfil</DropdownItem>
+        <DropdownMenu aria-expanded>
+          <DropdownItem aria-level={1} onClick={() => navigate('/')}>Home</DropdownItem>
+          <DropdownItem aria-level={2} onClick={() => navigate('/admin-register')}>Registrar Nuevo</DropdownItem>
+          <DropdownItem aria-level={3} onClick={() => navigate('/category')}>Categorías</DropdownItem>
+          <DropdownItem aria-level={4} onClick={() => navigate('/register')}>Mi perfil</DropdownItem>
         </DropdownMenu>
       </Dropdown>
       <a href="admin-register" type="button" className="py-2 px-3 hover:underline rounded-full relative">
