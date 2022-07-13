@@ -1,10 +1,11 @@
 import SectionButton from '../Components/SectionButton'
-
+import Navbar from '../Components/Navbar'
 
 const Category = () => {
   return (
     <>
-      <h1>Nutrición</h1>
+      <Navbar/>
+      <h1>Título de sección</h1>
       <SectionButton text='Subapartado uno'/>
       <SectionButton text='Subapartadp dos '/>
       <SectionButton text='Subapartadp tres'/>
