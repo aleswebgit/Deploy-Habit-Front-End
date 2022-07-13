@@ -17,7 +17,7 @@ const Category = () => {
         : selectCategory == 4
           ? setFilter('salud mental')
           : setFilter('sueño')
-  }, [])
+  }, [selectCategory])
   
   const sectionsOfCategoryRequest = async () =>{
     try {
