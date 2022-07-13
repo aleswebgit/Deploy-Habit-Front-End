@@ -34,10 +34,10 @@ function Navbar(){
         <DropdownMenu>
           <DropdownItem onClick={() => navigate('/')}>Página principal</DropdownItem>
           <DropdownItem onClick={() => navigate('/admin-register')}>Alta nueva en el sistema</DropdownItem>
-          <DropdownItem onClick={() => navigate('/')}>Sueño</DropdownItem>
-          <DropdownItem onClick={() => navigate('/')}>Nutrición</DropdownItem>
-          <DropdownItem onClick={() => navigate('/')}>Deporte</DropdownItem>
-          <DropdownItem onClick={() => navigate('/')}>Salud Mental</DropdownItem>
+          <DropdownItem onClick={() => navigate('/category/:1')}>Sueño</DropdownItem>
+          <DropdownItem onClick={() => navigate('/category/:2')}>Nutrición</DropdownItem>
+          <DropdownItem onClick={() => navigate('/category/:3')}>Deporte</DropdownItem>
+          <DropdownItem onClick={() => navigate('/category/:4')}>Salud Mental</DropdownItem>
         </DropdownMenu>
       </Dropdown>
       <CgUserAdd type='button' className='text-[#BC4E2A] display-block h-[48px] w-[48px]' onClick={() => navigate('/admin-register')}  />
