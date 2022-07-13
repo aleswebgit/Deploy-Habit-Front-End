@@ -1,4 +1,6 @@
 import {CgMenuBoxed} from 'react-icons/cg'
+import {CgUserAdd} from 'react-icons/cg'
+import { BiUserCircle } from 'react-icons/bi'
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React,{useState} from 'react'
@@ -8,33 +10,47 @@ function Navbar(){
 
   const navigate = useNavigate()
 
-  const [dropdown, setDropdown] = useState(false)
-
-  const openCloseDropdown = () => {
-    setDropdown(!dropdown)
+  const [dropdownL, setDropdownL] = useState(false)
+  
+  const openCloseDropdownL = () => {
+    setDropdownL(!dropdownL)
   }
+
+
+  const [dropdownR, setDropdownR] = useState(false)
+
+  const openCloseDropdownR = () => {
+    setDropdownR(!dropdownR)
+  }
+
 
   return(
     
     <nav className='w-full flex relative justify-between items-center mx-auto px-8 h-20 '>
-      <Dropdown isOpen = {dropdown} toggle = {openCloseDropdown} className = 'border-transparent ' >
+      <Dropdown isOpen = {dropdownL} toggle = {openCloseDropdownL} className = 'border-transparent ' >
         <DropdownToggle className = 'bg-transparent border-0 '>
           <CgMenuBoxed className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
         </DropdownToggle >
-    
         <DropdownMenu>
-          <DropdownItem onClick={() => navigate('/')}>Home</DropdownItem>
-          <DropdownItem onClick={() => navigate('/admin-register')}>Registrar Nuevo</DropdownItem>
-          <DropdownItem onClick={() => navigate('/')}>Categorías</DropdownItem>
-          <DropdownItem onClick={() => navigate('/')}>Mi perfil</DropdownItem>
+          <DropdownItem onClick={() => navigate('/')}>Página principal</DropdownItem>
+          <DropdownItem onClick={() => navigate('/admin-register')}>Alta nueva en el sistema</DropdownItem>
+          <DropdownItem onClick={() => navigate('/')}>Sueño</DropdownItem>
+          <DropdownItem onClick={() => navigate('/')}>Nutrición</DropdownItem>
+          <DropdownItem onClick={() => navigate('/')}>Deporte</DropdownItem>
+          <DropdownItem onClick={() => navigate('/')}>Salud Mental</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <a href="admin-register" type="button" className="py-2 px-3 hover:underline rounded-full relative">
-          Registro nuevo
-      </a>
-      <a href="login" className = 'flex mr-4 items-center'>
-        <img className="h-[48px] w-[48px]" src={require('../media/img/picprofile.png')} alt="profileIcon" />
-      </a>
+      <CgUserAdd type='button' className='text-[#BC4E2A] display-block h-[48px] w-[48px]' onClick={() => navigate('/admin-register')}  />
+      <Dropdown isOpen = {dropdownR} toggle = {openCloseDropdownR} className = 'border-transparent ' >
+        <DropdownToggle className = 'bg-transparent border-0 '>
+          <BiUserCircle className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
+        </DropdownToggle >
+        <DropdownMenu>
+          <DropdownItem  onClick={() => navigate('/login')}>Conectar</DropdownItem>
+          <DropdownItem  onClick={() => navigate('/profile/:id')}>Mi perfil</DropdownItem>
+          <DropdownItem  onClick={() => navigate('/')}>Desconectar</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </nav>
   )
 }
