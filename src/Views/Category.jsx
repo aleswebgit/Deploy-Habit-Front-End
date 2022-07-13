@@ -1,23 +1,25 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
-import SectionButton from '../Components/SectionButton'
+// import SectionButton from '../Components/SectionButton'
 
 
 const Category = () => {
   const selectCategory = useParams().id
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   // const [category, setCategory] = useState({})
-  const [filter, setFilter] = useState('sueño')
-  const [sections, setSections] = useState([])
+  const [filter, setFilter] = useState('')
+  // const [sections, setSections] = useState([])
 
-  selectCategory === 2 ? setFilter('nutricion') 
-    : selectCategory === 3
-      ? setFilter('salud mental')
-      : selectCategory === 4
-        ? setFilter('deporte')
-        : setFilter('sueño')
+  useEffect(() => {
+    selectCategory == 2 ? setFilter('nutrición') 
+      : selectCategory == 3
+        ? setFilter('ejercicio físico')
+        : selectCategory == 4
+          ? setFilter('salud mental')
+          : setFilter('sueño')
+  }, [])
   
   const sectionsOfCategoryRequest = async () =>{
     try {
@@ -32,8 +34,8 @@ const Category = () => {
       ).then(response => {
         // setCategory(response.data)
         console.log(response.data)
-        const filterSections = response.data.filter(section => section.category === filter)
-        setSections(filterSections)
+        // const filterSections = response.data.filter(section => section.category === filter)
+        // setSections(filterSections)
       })
       console.log(response)
     } catch (error) {
@@ -41,27 +43,14 @@ const Category = () => {
     }
   }
   
-  useEffect(()=>{
-    sectionsOfCategoryRequest()
-  },[])
+  useEffect(() => {
+    sectionsOfCategoryRequest
+  }, [])
 
   return (
     <>
       <Navbar />
-      <h1>Sueño</h1>
-      {sections.map(section => {
-        {/* return (
-          <div key={section.id}>
-            <SectionButton name={section.name} />
-          </div>
-        ) */}
-        return <SectionButton key={selectCategory} name={section.name} onClick={() => navigate('/section/' + section.id)} />
-      })}
-      {/* <SectionButton text='Subapartado uno'/>
-      <SectionButton text='Subapartadp dos '/>
-      <SectionButton text='Subapartadp tres'/>
-      <SectionButton text='Subapartadp cuatro'/>
-      <SectionButton text='Subapartadp cinco'/> */}
+      <h1 className='flex justify-center text-5xl text-center py-2 m-8 text-[#BC4E2A] uppercase'>{filter}</h1>
     </>
   )
 }
