@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
+// import UserRegisterForm from '../Components/UserRegisterForm'
+// import Arrow from '../media/icons/Arrow'
 
 const Profile = () => {
   const userId = useParams().id
@@ -33,9 +35,11 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <h1>Profile</h1>
+      <h1 className='flex justify-center text-5xl text-center py-2 m-8 text-[#BC4E2A]'>Tu perfil</h1>
       <h2>{user.name}</h2>
       <p>{user.email}</p>
+      {/* <UserRegisterForm/>
+      <Arrow/> */}
     </>
   )
 }
