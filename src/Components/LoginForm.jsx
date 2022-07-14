@@ -1,10 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
-// import { useNavigate } from 'react-router-dom'
 import axios from '../api/axios'
 
 function LoginForm (){
-
-  // const navigate = useNavigate()
 
   const userRef = useRef()
   const errRef = useRef()
@@ -35,6 +32,7 @@ function LoginForm (){
         }
       ).then(response => {
         console.log(response)
+        localStorage.setItem('token', response.data.token)
       })
       console.log(JSON.stringify(response?.data))
       setEmail('')
@@ -74,7 +72,6 @@ function LoginForm (){
             </div>
             <div className='px-4 pb-2 pt-4'>
               <button type="submit" className='m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>Acceder</button>
-              {/* onClick={() => navigate('/Home')} */}
             </div>
           </form>
 

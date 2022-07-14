@@ -6,10 +6,11 @@ import RoutesConfig from './routes/RoutesConfig.jsx'
 function App() {
 
   return (
-    <div>
+    <div className="bg-[#FDF6EC]">
       <RoutesConfig />
     </div>
   )
 }
 
 export default App
+
