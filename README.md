@@ -32,9 +32,9 @@ Para la construcción y desarrollo del Front-End se utilizó el stack:
 - TailwindCss
 
 ### Equipo
-- [Ales Navarro] (https://github.com/aleswebgit "Ales")
-- [Alex Vidal] (https://github.com/ginkgob "Álex ")
-- [Damaris Teoc] (https://github.com/DamarisTeoc "Damaris")
-- [Daniel Calvo] (https://github.com/LvL090 "Daniel calvo")
-- [Jessica Mejia] (https://github.com/itsberriver "Jessica")
+- [Ales Navarro](https://github.com/aleswebgit "Ales")
+- [Alex Vidal](https://github.com/ginkgob "Álex ")
+- [Damaris Teoc](https://github.com/DamarisTeoc "Damaris")
+- [Daniel Calvo](https://github.com/LvL090 "Daniel calvo")
+- [Jessica Mejia](https://github.com/itsberriver "Jessica")
 
