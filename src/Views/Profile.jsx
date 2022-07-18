@@ -36,7 +36,7 @@ const Profile = () => {
     <>
       <Navbar />
       <h1 className='flex justify-center text-5xl text-center py-2 m-8 text-[#BC4E2A]'>Tu perfil</h1>
-      <div className ="md:flex flex flex-col gap-4 ">
+      <div className ="md:flex md:flex-row flex flex-col gap-4 ">
         <div className='p-4 md:max-w-[20%] md:max-h-[300px] md:min-w-[20%] my-auto bg-[#F8D1B4] w-[85%] md:px-[40%] mx-auto rounded-3xl'>
           <p className='bg-[#E57A56] rounded-full p-2  mx-2 text-center text-sm font-bold text-white'>Nombre:</p>
           <p className='bg-white rounded-full p-2  mx-2 text-center text-sm'>{user.email}Alex Vidal Romero</p>
