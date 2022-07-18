@@ -10,10 +10,10 @@ const Inquiry = () => {
                 escríbenos dándole al botón.
             </p>
             <div>
-              <a className=' bg-white rounded-3xl text-xl font-bold py-1 px-12 text-[#BC4E2A]'>
-                <button>
-                    hacer consulta
-                </button>
+              <a 
+                href="mailto:yourwebsolutions3000@gmail.com?subject=Consulta web Habits+" 
+                className='bg-white rounded-3xl text-xl font-bold py-1 px-12 text-[#BC4E2A]'>
+                hacer consulta
               </a>
             </div>
           </div>
