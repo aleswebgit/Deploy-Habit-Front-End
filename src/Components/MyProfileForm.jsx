@@ -3,7 +3,7 @@
 
 function MyProfileForm(){
   return(
-    <form className="p-4 my-14 bg-[#F8D1B4] w-[313px] mx-auto rounded-3xl">
+    <form className="p-4 bg-[#F8D1B4] w-[313px] mx-auto rounded-3xl">
       <h1 className="flex p-2 text-2xl items-center justify-center text-center text-[#BC4E2A] uppercase">AYÚDANOS A SABER MÁS DE TÍ</h1>
       <label className="w-full">
         <input
