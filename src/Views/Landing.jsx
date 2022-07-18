@@ -6,7 +6,7 @@ function Landing(){
       <img 
         src={landingPic} 
         alt="landing"
-        className = 'm-auto w-[20%] flex self-center ' />
+        className = 'm-auto w-[80%] sm:w-[20%] flex self-center ' />
     </div>
   )
 }
