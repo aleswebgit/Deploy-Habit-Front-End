@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import CategoryButton from '../Components/CategoryButton'
+import CategoryData from '../Components/CategoryData'
 import Landing from '../Views/Landing'
 import Advice from '../Components/Advice'
 import Navbar from '../Components/Navbar'
@@ -32,7 +32,7 @@ const Home = () => {
                 Ver más...
                 </a>
               </div>
-              <CategoryButton/>
+              <CategoryData />
             </div>
             <Advice/>
           </>
