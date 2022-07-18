@@ -44,13 +44,11 @@ const CategoryData = () => {
   ])
 
   return (
-    <section className='grid grid-cols-2 sm:grid-cols-1 p-6'>
+    <section className='grid grid-cols-2 p-6 gap-6'>
       {categories.map( category => {
         return (
           <Link to={`/category/${category.id}`} key={category.name} className='flex justify-center py-3 font-bold'>
             <CategoryButton category={category} />
-            {/* <CatButton category={category} className="flex md:hidden"/>
-            <CatDesktopButton category={category} className="hidden md:flex" /> */}
             <CategoryDesktopButton category={category} />
           </Link>
         )
