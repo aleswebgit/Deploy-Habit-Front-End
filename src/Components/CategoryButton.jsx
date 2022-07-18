@@ -40,11 +40,11 @@ const CategoryButton = () => {
   ])
 
   return (
-    <section className='grid grid-cols-2 sm:grid-cols-1 p-6'>
+    <section className=' grid grid-cols-2 p-6 '>
       {categories.map( category => {
         return (                        
-          <Link to={`/category/${category.id}`} key={category.name} className='flex justify-center py-3 font-bold'>
-            <div className={`${category.bgColor} flex flex-col items-center justify-center w-[140px] min-w-[140px] h-[140px] sm:w-[500px] rounded-3xl`}>
+          <Link to={`/category/${category.id}`} key={category.name} className='flex justify-center py-3 font-bold '>
+            <div className={`${category.bgColor} flex flex-col items-center justify-center w-[140px] min-w-[140px] h-[140px] sm:w-[100px] rounded-3xl`}>
               <div className="flex item-center justify-center ">
                 {category.icon}
               </div>
