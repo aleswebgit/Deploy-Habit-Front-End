@@ -7,7 +7,7 @@ function AboutUs(){
     <>
       <Navbar/>
       <h1 className='flex justify-center text-5xl text-center py-2 m-8 text-[#BC4E2A] uppercase'>SOBRE NOSOTROS</h1>
-      <div className="bg-[#E57A56] m-auto rounded-3xl p-5 sm:max-w-[700px] sm:m-9 text-[#FDF6EC] font-medium">
+      <div className="bg-[#E57A56] sm:m-auto rounded-3xl px-3 py-5 sm:p-5 m-4 sm:max-w-[700px] sm:m-9 text-[#FDF6EC] font-medium">
         <p className="text-center">
         Cáritas Diocesana de Sant Feliu formamos parte de la Acción Social de la Iglesia en la
         Diócesis de Sant Feliu de Llobregat. Extendemos la mano a las personas en riesgo de
