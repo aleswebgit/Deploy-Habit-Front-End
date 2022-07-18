@@ -22,16 +22,16 @@ const Home = () => {
         : (
           <>
             <Navbar/>
-            <div className='flex justify-center h-full'>
-              <section className='w-2/5 h-full flex justify-center '>
+            <div className='flex flex-col lg:flex-row justify-center h-full'>
+              <section className='lg:w-2/5 h-full flex justify-center relative'>
                 <Title/>
-                <div className='md:flex fixed  bottom-10 '>
-                  <Inquiry/>
-                </div> 
               </section>
-              <section className='w-3/5 h-full'>
+              <section className='lg:w-3/5 h-full'>
                 <CategoryButton/>
               </section>
+              <div className='lg:flex lg:fixed lg:bottom-10 bottom-0 lg:left-8'>
+                <Inquiry/>
+              </div> 
             </div>
           </>
         )}

@@ -1,10 +1,10 @@
 const Inquiry = () => {
   return (
-    <ul>
-      <li className='bg-[#E57A56] text-center rounded-t-3xl'>
-        <div className=' w-[500px] h-[700px] mb-[-600px] hover:mb-[-300px] duration-300'>
+    <ul className="pl-0 mb-0">
+      <li className='bg-[#E57A56] text-center lg:rounded-t-3xl pb-4'>
+        <div className='lg:w-[500px] lg:h-[700px] lg:mb-[-600px] lg:hover:mb-[-300px] duration-300'>
           <p className='text-white text-3xl pt-10 font-extrabold'>HACER CONSULTA</p>
-          <div className='bg-[#F8D1B4] mt-20 mr-4 ml-4 p-5  rounded-3xl text-center space-y-4'>
+          <div className='bg-[#F8D1B4] lg:mt-20 mx-4 p-5 rounded-3xl text-center space-y-4'>
             <p className='text-lg text-[#BC4E2A]'>
                 Si tienes alguna duda, y quieres la respuesta de forma personalizada,
                 escríbenos dándole al botón.
