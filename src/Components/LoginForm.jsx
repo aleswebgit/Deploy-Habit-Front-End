@@ -47,7 +47,7 @@ function LoginForm (){
       
       <p ref={errRef} className={errorMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errorMsg}</p>
 
-      <div className='relative hidden w-1/2 items-center bg-cover bg-no-repeat lg:flex bg-[url("https://static.vecteezy.com/system/resources/previews/005/611/051/non_2x/hands-of-different-people-and-hearts-on-a-white-background-tolerance-illustration-free-vector.jpg")] ' >
+      <div className='relative hidden w-1/2 items-center bg-cover bg-no-repeat lg:flex bg-[url("../src/media/img/bg.jpg")] ' >
         <div className='absolute inset-0 z-0 bg-orange-400 opacity-70'>
         </div>
         <div className='z-10 w-full px-24'>
