@@ -7,6 +7,7 @@ import AdminRegister from '../Views/AdminRegister'
 import Profile from '../Views/Profile'
 import Section from '../Views/Section'
 import AboutUs from '../Views/AboutUs'
+import Landing from '../Views/Landing'
 
 
 function RoutesConfig(){
@@ -22,6 +23,7 @@ function RoutesConfig(){
         <Route path="/admin-register" element={ <AdminRegister/> } />
         <Route path="/profile/:id" element={ <Profile/> } />
         <Route path="/about-us" element={ <AboutUs/> } />
+        <Route path="/landing" element={ <Landing/> } />
       </Routes>
     </Router>
   )
