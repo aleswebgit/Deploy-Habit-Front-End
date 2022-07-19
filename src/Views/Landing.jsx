@@ -1,6 +1,19 @@
 import landingPic from '../media/img/landingPic.png'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+
 
 function Landing(){
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate('/home')
+    }, 2000)
+  }, [])
+ 
+
   return(
     <div className = " h-screen flex justify-center items-center flex-col">
       <img 
