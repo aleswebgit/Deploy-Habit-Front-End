@@ -35,11 +35,11 @@ function Navbar(){
         <DropdownMenu aria-expanded aria-label='menu desplegable'>
           <DropdownItem aria-level={1} onClick={() => navigate('/')}>Página principal</DropdownItem>
           <DropdownItem aria-level={2} onClick={() => navigate('/admin-register')}>Alta nueva en el sistema</DropdownItem>
-          <DropdownItem aria-level={3} onClick={() => navigate('/category/:1')}>Sueño</DropdownItem>
-          <DropdownItem aria-level={4} onClick={() => navigate('/category/:2')}>Nutrición</DropdownItem>
-          <DropdownItem aria-level={5} onClick={() => navigate('/category/:3')}>Deporte</DropdownItem>
-          <DropdownItem aria-level={6} onClick={() => navigate('/category/:4')}>Salud Mental</DropdownItem>
-          <DropdownItem aria-level={7} onClick={() => navigate('/about-us')}>Sobre Nosotros</DropdownItem>
+          <DropdownItem aria-level={3} onClick={() => navigate('/category/1')}>Sueño</DropdownItem>
+          <DropdownItem aria-level={4} onClick={() => navigate('/category/2')}>Nutrición</DropdownItem>
+          <DropdownItem aria-level={5} onClick={() => navigate('/category/3')}>Ejercicio físico</DropdownItem>
+          <DropdownItem aria-level={6} onClick={() => navigate('/category/4')}>Salud Mental</DropdownItem>
+          <DropdownItem aria-level={7} onClick={() => navigate('/about-us')}>Quiénes somos</DropdownItem>
         </DropdownMenu>
       </Dropdown>
       <CgUserAdd role="button" aria-label='añadir un usuario' type='button' className='text-[#BC4E2A] display-block h-[48px] w-[48px]' onClick={() => navigate('/admin-register')}  />
