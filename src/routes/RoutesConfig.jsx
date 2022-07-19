@@ -15,7 +15,7 @@ function RoutesConfig(){
 
     <Router>
       <Routes>
-        <Route path="/" element={ <Home/> } />
+        <Route path="/" element={ <Landing/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/register" element={ <UserRegister/> } />
         <Route path="/category/:id" element={ <Category/> } />
@@ -23,7 +23,7 @@ function RoutesConfig(){
         <Route path="/admin-register" element={ <AdminRegister/> } />
         <Route path="/profile/:id" element={ <Profile/> } />
         <Route path="/about-us" element={ <AboutUs/> } />
-        <Route path="/landing" element={ <Landing/> } />
+        <Route path="/home" element={ <Home/> } />
       </Routes>
     </Router>
   )

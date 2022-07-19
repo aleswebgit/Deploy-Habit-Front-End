@@ -12,7 +12,7 @@ const Inquiry = () => {
             <div>
               <a 
                 href="mailto:yourwebsolutions3000@gmail.com?subject=Consulta web Habits+" 
-                className='bg-white rounded-3xl text-xl font-bold py-3 px-8 text-[#BC4E2A]'>
+                className='bg-white rounded-3xl text-xl font-bold py-3 px-4 text-[#BC4E2A]'>
                 hacer consulta
               </a>
             </div>
