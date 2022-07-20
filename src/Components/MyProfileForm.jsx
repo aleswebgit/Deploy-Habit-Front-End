@@ -5,12 +5,20 @@ function MyProfileForm(){
 
   const handleEditOption = (e) => {
     e.preventDefault()
-    setRead(!read)
+    setRead(false)
+  }
+
+  const updateProfile = (e) => {
+    e.preventDefault()
+    setRead(true)
   }
 
   return(
-    <form className="p-4 bg-[#F8D1B4] w-[313px] mx-auto rounded-3xl">
-      <h1 className="flex p-2 text-2xl items-center justify-center text-center text-[#BC4E2A] uppercase">Actualiza tus datos</h1>
+    <form 
+      onSubmit={updateProfile}
+      className="p-4 bg-[#F8D1B4] w-[313px] mx-auto rounded-3xl"
+    >
+      <h1 className="flex p-2 text-2xl items-center justify-center text-center text-[#BC4E2A] uppercase">Tus datos</h1>
       <label className="w-full">
         <input
           name="name"
@@ -26,6 +34,14 @@ function MyProfileForm(){
           className="mt-3 rounded-full text-center w-full p-2"
           readOnly={read}
           placeholder="Apellidos"/>
+      </label>
+      <label className="w-full">
+        <input
+          name="email"
+          type="email"
+          className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
+          placeholder="Email"/>
       </label>
       <label className="w-full">
         <input
@@ -98,12 +114,14 @@ function MyProfileForm(){
         </select>
       </label>
       <div className="m-6 flex justify-center">
-        <button
-          className="h-10 px-5 bg-[#BC4E2A] rounded-full text-white"
-          onClick={handleEditOption}
-        >
+        { read 
+          ? (<button
+            className="h-10 px-5 bg-[#BC4E2A] rounded-full text-white"
+            onClick={handleEditOption}
+          >
           Editar
-        </button>
+          </button>) 
+          : <button className="h-10 px-5 bg-[#BC4E2A] text-white rounded-full">Guardar</button> }
       </div>
       <div>
       </div>
