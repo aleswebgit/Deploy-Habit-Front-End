@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import uuid from 'react-uuid'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
+import Arrow from '../media/icons/Arrow'
 
 
 
@@ -40,6 +41,9 @@ const Section =() => {
         if (element[0] === 'p') return <p className = "justify-center m-4" key={uuid()}>{element[1]}</p>
         if (element[0] === 'a') return <a  href={element[2]} key={uuid()} className="block justify-center my-2 mx-4 decoration-solid">{element[1]}</a>
       })}
+      <div className='m-4'>
+        <Arrow />
+      </div>
     </>
 
   )
