@@ -1,7 +1,9 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useContext } from 'react'
 import axios from '../api/axios'
+import AuthContext from '../context/AuthProvider'
 
 function LoginForm (){
+  const { setAuth } = useContext(AuthContext)
 
   const userRef = useRef()
   const errRef = useRef()
@@ -29,10 +31,18 @@ function LoginForm (){
             'Content-Type' : 'application/json',
             'Access-Control-Allow-Origin' : '*' 
           },
+          withCredentials: true
         }
       ).then(response => {
-        console.log(response)
-        localStorage.setItem('token', response.data.token)
+        console.log(response.data)
+        // localStorage.setItem('token', response.data.token)
+        const accessToken = response?.data?.token
+        const roles = response?.data?.roles
+        const idUser = response?.data?.idUser
+        
+        setAuth({ email, idUser, roles, accessToken })
+        setEmail('')
+        setPassword('')
       })
       console.log(JSON.stringify(response?.data))
       setEmail('')
