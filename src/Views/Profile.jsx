@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from '../api/axios'
+import MyProfileForm from '../Components/MyProfileForm'
 import Navbar from '../Components/Navbar'
-// import UserRegisterForm from '../Components/UserRegisterForm'
-// import Arrow from '../media/icons/Arrow'
+import Arrow from '../media/icons/Arrow'
 
 const Profile = () => {
   const userId = useParams().id
@@ -36,10 +36,18 @@ const Profile = () => {
     <>
       <Navbar />
       <h1 className='flex justify-center text-5xl text-center py-2 m-8 text-[#BC4E2A]'>Tu perfil</h1>
-      <h2>{user.name}</h2>
-      <p>{user.email}</p>
-      {/* <UserRegisterForm/>
-      <Arrow/> */}
+      <div className ="md:flex md:flex-row flex flex-col gap-4 ">
+        <div className='p-4 md:max-w-[20%] md:max-h-[300px] md:min-w-[20%] my-auto bg-[#F8D1B4] w-[85%] md:px-[40%] mx-auto rounded-3xl'>
+          <p className='bg-[#E57A56] rounded-full p-2  mx-2 text-center text-sm font-bold text-white'>Nombre:</p>
+          <p className='bg-white rounded-full p-2  mx-2 text-center text-sm'>{user.email}Alex Vidal Romero</p>
+          <p className='bg-[#E57A56] rounded-full p-2  mx-2 text-center text-sm font-bold text-white'>Email:</p>
+          <p className='bg-white rounded-full p-2  mx-2 text-center text-sm'>{user.email}user1@gmail.com</p>
+        </div>
+        <MyProfileForm/>
+      </div>
+      <div className='m-4'>
+        <Arrow />
+      </div>
     </>
   )
 }

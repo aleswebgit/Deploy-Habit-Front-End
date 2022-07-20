@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import uuid from 'react-uuid'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
 
@@ -11,7 +12,7 @@ const Section =() => {
   
   const sectionRequest = async () =>{
     try {
-      const response = await axios.get(`/sections/${sectionId}`,
+      await axios.get(`/sections/${sectionId}`,
         {
           headers:{
             'Content-Type' : 'application/json',
@@ -21,9 +22,7 @@ const Section =() => {
         }
       ).then(response => {
         setSection(response.data)
-        console.log(response.data)
       })
-      console.log(response)
     } catch (error) {
       console.log(error)
     }
@@ -32,15 +31,15 @@ const Section =() => {
     sectionRequest()
   },[])
 
-
   return (
     <>
       <Navbar />
-      <h1>{ section.name }</h1>
-      <h2>{ section.text }</h2>
-      <p>{ section.description }</p>
+      <h1>{ section.title }</h1>
       <p>{ section.category }</p>
-        
+      {section.text && section.text.map(element => {
+        if (element[0] === 'p') return <p key={uuid()}>{element[1]}</p>
+        if (element[0] === 'a') return <a href={element[2]} key={uuid()} className="block">{element[1]}</a>
+      })}
     </>
 
   )

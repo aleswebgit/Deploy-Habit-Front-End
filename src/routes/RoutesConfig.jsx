@@ -6,6 +6,8 @@ import Category from '../Views/Category'
 import AdminRegister from '../Views/AdminRegister'
 import Profile from '../Views/Profile'
 import Section from '../Views/Section'
+import AboutUs from '../Views/AboutUs'
+import Landing from '../Views/Landing'
 
 
 function RoutesConfig(){
@@ -13,13 +15,15 @@ function RoutesConfig(){
 
     <Router>
       <Routes>
-        <Route path="/" element={ <Home/> } />
+        <Route path="/" element={ <Landing/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/register" element={ <UserRegister/> } />
         <Route path="/category/:id" element={ <Category/> } />
         <Route path="/section/:id" element={ <Section/> } />
         <Route path="/admin-register" element={ <AdminRegister/> } />
         <Route path="/profile/:id" element={ <Profile/> } />
+        <Route path="/about-us" element={ <AboutUs/> } />
+        <Route path="/home" element={ <Home/> } />
       </Routes>
     </Router>
   )

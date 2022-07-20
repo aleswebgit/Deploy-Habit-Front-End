@@ -50,7 +50,7 @@ const Category = () => {
         return (
           <SectionButton 
             key={section._id}
-            text={section.text}
+            title={section.title}
             onClick={() => navigate(`/section/${section._id}`)}
           />
         )
