@@ -38,7 +38,11 @@ const Section =() => {
       <p>{ section.category }</p>
       {section.text && section.text.map(element => {
         if (element[0] === 'p') return <p key={uuid()}>{element[1]}</p>
-        if (element[0] === 'a') return <a href={element[2]} target="_blank"  rel="noopener noreferrer" key={uuid()} className="block">{element[1]}</a>
+        if (element[0] === 'a') {
+          const href = element.length === 2 ? element[1] : element[2]
+
+          return <a href={href} target="_blank"  rel="noopener noreferrer" key={uuid()} className="block">{element[1]}</a>
+        }
       })}
     </>
 
