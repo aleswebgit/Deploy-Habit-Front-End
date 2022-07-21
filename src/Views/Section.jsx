@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import uuid from 'react-uuid'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
+import Arrow from '../media/icons/Arrow'
 
 
 
@@ -34,16 +35,19 @@ const Section =() => {
   return (
     <>
       <Navbar />
-      <h1>{ section.title }</h1>
-      <p>{ section.category }</p>
+      <h1 className='flex justify-center text-5xl text-center py-2 m-8 text-[#BC4E2A] uppercase'>{ section.title }</h1>
+      <p className = "justify-center text-center text-[#E57A56]">{ section.category }</p>
       {section.text && section.text.map(element => {
-        if (element[0] === 'p') return <p key={uuid()}>{element[1]}</p>
+        if (element[0] === 'p') return <p key={uuid()} className="justify-center m-4">{element[1]}</p>
         if (element[0] === 'a') {
           const href = element.length === 2 ? element[1] : element[2]
 
-          return <a href={href} target="_blank"  rel="noopener noreferrer" key={uuid()} className="block">{element[1]}</a>
+          return <a href={href} target="_blank" rel="noopener noreferrer" key={uuid()} className="block justify-center my-2 mx-4 decoration-solid">{element[1]}</a>
         }
       })}
+      <div className='m-4'>
+        <Arrow />
+      </div>
     </>
 
   )
