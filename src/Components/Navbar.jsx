@@ -3,10 +3,12 @@ import {CgUserAdd} from 'react-icons/cg'
 import { BiUserCircle } from 'react-icons/bi'
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import AuthContext from '../context/AuthProvider'
 
 function Navbar(){
+  const { idUser } = useContext(AuthContext)
 
   const navigate = useNavigate()
 
@@ -49,7 +51,7 @@ function Navbar(){
         </DropdownToggle >
         <DropdownMenu aria-expanded>
           <DropdownItem aria-level={1} onClick={() => navigate('/login')}>Conectar</DropdownItem>
-          <DropdownItem aria-level={2} onClick={() => navigate('/profile/id')}>Mi perfil</DropdownItem>
+          <DropdownItem aria-level={2} onClick={() => navigate(`/profile/${idUser}`)}>Mi perfil</DropdownItem>
           <DropdownItem aria-level={3} onClick={() => navigate('/')}>Desconectar</DropdownItem>
         </DropdownMenu>
       </Dropdown>

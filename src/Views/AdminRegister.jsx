@@ -45,7 +45,7 @@ function AdminRegister(){
         }
       ).then(response => {
         console.log(response)
-        localStorage.setItem('token', response.data.token)
+        // localStorage.setItem('token', response.data.token)
       })
       
       console.log(JSON.stringify(response?.data))
