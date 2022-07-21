@@ -27,11 +27,10 @@ function LoginForm (){
       const response = await axios.post('/api/auth/signin', 
         JSON.stringify({email, password}), 
         {
-          headers:{
-            'Content-Type' : 'application/json',
-            'Access-Control-Allow-Origin' : true,
-          },
+           
+          headers: { 'Content-Type': 'application/json' },
           withCredentials: true
+                
         }
       )
       console.log(JSON.stringify(response?.data))
