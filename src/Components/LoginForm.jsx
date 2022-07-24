@@ -24,7 +24,7 @@ function LoginForm (){
     e.preventDefault()
 
     try {
-      const response = await axios.post('/api/auth/signin', 
+      await axios.post('/api/auth/signin', 
         JSON.stringify({email, password}), 
         {
           headers:{
@@ -41,12 +41,16 @@ function LoginForm (){
         const idUser = response?.data?.idUser
         
         setAuth({ email, idUser, roles, accessToken })
+        // set localStorage successfullyLogin = true
+        localStorage.setItem('successfullyLogin', true)
         setEmail('')
         setPassword('')
       })
-      console.log(JSON.stringify(response?.data))
+      // console.log(JSON.stringify(response?.data))
       setEmail('')
       setPassword('')
+      // go to home page after login
+      window.location.href = '/'
     } catch (error) {
       console.log(error.response)
     }
