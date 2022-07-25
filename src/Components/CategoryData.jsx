@@ -47,7 +47,7 @@ const CategoryData = () => {
     <section className='grid grid-cols-2 p-6 gap-6 '>
       {categories.map( category => {
         return (
-          <Link to={`/category/${category.id}`} key={category.name} className='flex transform mtransition duration-500 hover:scale-110 justify-center py-3 font-medium'>
+          <Link to={`/category/${category.id}`} key={category.name} className='flex md:transform md:transition md:duration-500 md:hover:scale-110 justify-center py-3 font-medium'>
             <CategoryButton category={category} />
             <CategoryDesktopButton category={category} />
           </Link>
