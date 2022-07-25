@@ -37,7 +37,7 @@ const Section =() => {
       <Navbar />
       <h1 className='flex justify-center text-5xl text-center md:mb-20 py-2 m-8 text-[#BC4E2A] uppercase'>{ section.title }</h1>
       {/* <p className = "justify-center text-center text-[#E57A56]">{ section.category }</p> */}
-      <div id="links" className="md:columns-2 md:px-2	md:break-after-column md:m-6">
+      <div id="links" className="md:columns-2 md:px-2	md:break-after-column ">
 
         {section.text && section.text.map(element => {
         
