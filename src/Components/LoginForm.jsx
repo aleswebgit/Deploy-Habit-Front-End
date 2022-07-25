@@ -25,14 +25,7 @@ function LoginForm (){
 
     try {
       await axios.post('/api/auth/signin', 
-        JSON.stringify({email, password}), 
-        // {
-        //   headers:{
-        //     'Content-Type' : 'application/json',
-        //     'Access-Control-Allow-Origin' : '*' 
-        //   },
-        //   withCredentials: true
-        // }
+        JSON.stringify({email, password})
       ).then(response => {
         console.log(response.data)
         const accessToken = response?.data?.token
@@ -41,17 +34,15 @@ function LoginForm (){
         
         localStorage.setItem('token', accessToken)
         localStorage.setItem('successfullyLogin', true)
-        // localStorage.setItem('roles', roles)
         localStorage.setItem('idUser', idUser)
         setAuth({ email, idUser, roles, accessToken })
         setEmail('')
         setPassword('')
       })
-      // console.log(JSON.stringify(response?.data))
       setEmail('')
       setPassword('')
       // go to home page after login
-      window.location.href = '/'
+      window.location.href = '/home'
     } catch (error) {
       console.log(error.response)
     }
