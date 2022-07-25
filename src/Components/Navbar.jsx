@@ -3,19 +3,18 @@ import {CgUserAdd} from 'react-icons/cg'
 import { BiUserCircle } from 'react-icons/bi'
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React,{useEffect, useState} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-// import AuthContext from '../context/AuthProvider'
-import Cookies from 'js-cookie'
+import AuthContext from '../context/AuthProvider'
 
 function Navbar(){
-  // const { idUser } = useContext(AuthContext)
-  const [idUser, setIdUser] = useState(Cookies.get('idUser') || '')
+  const { idUser } = useContext(AuthContext)
+  // const [idUser, setIdUser] = useState('')
   // const [idUser, setIdUser] = useState('')
   const [successfullyLogin, setSuccessfullyLogin] = useState(false)
   // get idUser from cookies if exist
   // let cookieUser = ''
-  const [cookieUser, setCookieUser] = useState('')
+  // const [cookieUser, setCookieUser] = useState('')
 
   /* const getCookies = async () => {
 
@@ -78,18 +77,18 @@ function Navbar(){
     }
   }, []) */
 
-  useEffect(()=>{
-    let getCookies = Cookies.get('idUser')
-    if(getCookies){
-      setCookieUser(Cookies.get('idUser'))
-      let newUser = cookieUser.slice(0, cookieUser.length - 1)
-      newUser = newUser.slice(3, newUser.length)
-      console.log({newUser})
-      console.log(Cookies.get('idUser'))
+  // useEffect(()=>{
+  // let getCookies = Cookies.get('idUser')
+  // if(getCookies){
+  //   setCookieUser(Cookies.get('idUser'))
+  //   let newUser = cookieUser.slice(0, cookieUser.length - 1)
+  //   newUser = newUser.slice(3, newUser.length)
+  //   console.log({newUser})
+  //   console.log(Cookies.get('idUser'))
 
-      setIdUser(newUser)
-    }
-  },[idUser])
+  //   setIdUser(newUser)
+  // }
+  // },[idUser])
 
   const navigate = useNavigate()
 
