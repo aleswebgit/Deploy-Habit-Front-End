@@ -37,12 +37,12 @@ function AdminRegister(){
 
       const response = await axios.post('/api/auth/signup', 
         JSON.stringify({email, password}), 
-        {
-          headers:{
-            'Content-Type' : 'application/json',
-            'Access-Control-Allow-Origin' : '*' 
-          },
-        }
+        // {
+        //   headers:{
+        //     'Content-Type' : 'application/json',
+        //     'Access-Control-Allow-Origin' : '*' 
+        //   },
+        // }
       ).then(response => {
         console.log(response)
         // localStorage.setItem('token', response.data.token)

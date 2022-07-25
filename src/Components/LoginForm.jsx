@@ -26,13 +26,13 @@ function LoginForm (){
     try {
       await axios.post('/api/auth/signin', 
         JSON.stringify({email, password}), 
-        {
-          headers:{
-            'Content-Type' : 'application/json',
-            'Access-Control-Allow-Origin' : '*' 
-          },
-          withCredentials: true
-        }
+        // {
+        //   headers:{
+        //     'Content-Type' : 'application/json',
+        //     'Access-Control-Allow-Origin' : '*' 
+        //   },
+        //   withCredentials: true
+        // }
       ).then(response => {
         console.log(response.data)
         // localStorage.setItem('token', response.data.token)

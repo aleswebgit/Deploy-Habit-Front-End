@@ -14,13 +14,13 @@ const Section =() => {
   const sectionRequest = async () =>{
     try {
       await axios.get(`/sections/${sectionId}`,
-        {
-          headers:{
-            'Content-Type' : 'application/json',
-            'Access-Control-Allow-Origin' : '*',
-            'x-access-token': localStorage.getItem('token')
-          },
-        }
+        // {
+        //   headers:{
+        //     'Content-Type' : 'application/json',
+        //     'Access-Control-Allow-Origin' : '*',
+        //     'x-access-token': localStorage.getItem('token')
+        //   },
+        // }
       ).then(response => {
         setSection(response.data)
       })

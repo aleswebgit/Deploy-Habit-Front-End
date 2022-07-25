@@ -12,13 +12,13 @@ const Profile = () => {
   const userRequest = async () => {
     try {
       const response = await axios.get(`/users/${userId}`,
-        {
-          headers:{
-            'Content-Type' : 'application/json',
-            'Access-Control-Allow-Origin' : '*',
-            'x-access-token': localStorage.getItem('token')
-          },
-        }
+        // {
+        //   headers:{
+        //     'Content-Type' : 'application/json',
+        //     'Access-Control-Allow-Origin' : '*',
+        //     'x-access-token': localStorage.getItem('token')
+        //   },
+        // }
       )
       // .then(response => {
       // setUser(response.data)
