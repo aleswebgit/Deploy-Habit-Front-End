@@ -12,6 +12,7 @@ function Navbar(){
   // const { idUser } = useContext(AuthContext)
   // const { auth } = useContext(AuthContext)
   const [idUser, setIdUser] = useState('')
+  const [name, setName] = useState('')
   const [roles, setRoles] = useState([])
   const [successfullyLogin, setSuccessfullyLogin] = useState(false)
   const [dropdownL, setDropdownL] = useState(false)
@@ -29,6 +30,20 @@ function Navbar(){
         console.log(response.data)
         const getRoles = response.data.roles.map(role => role.name)
         setRoles(getRoles)
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const getUserInfo = async () =>{
+    try {
+      console.log('getUserInfo', idUser)
+      await axios.get(`/users/${idUser}`,
+      ).then(response => {
+        console.log(response.data)
+        const getName = response.data.name
+        setName(getName)
       })
     } catch (error) {
       console.log(error)
@@ -54,7 +69,10 @@ function Navbar(){
   }
 
   useEffect(()=>{
-    if (idUser !== '') getUserRoles()
+    if (idUser !== '') {
+      getUserRoles()
+      getUserInfo()
+    }
   }, [idUser])
 
   useEffect(()=>{
@@ -94,7 +112,10 @@ function Navbar(){
       }
       <Dropdown isOpen = {dropdownR} toggle = {openCloseDropdownR} className = 'border-transparent ' >
         <DropdownToggle className = 'bg-transparent border-0 '>
-          <BiUserCircle aria-label='icono de usuario' className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
+          {successfullyLogin && name !== ''
+            ? name
+            : <BiUserCircle aria-label='icono de usuario' className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
+          }
         </DropdownToggle >
         <DropdownMenu aria-expanded>
           {successfullyLogin
