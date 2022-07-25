@@ -12,6 +12,12 @@ function Navbar(){
   // const { auth } = useContext(AuthContext)
   const [idUser, setIdUser] = useState('')
   const [successfullyLogin, setSuccessfullyLogin] = useState(false)
+  const [dropdownL, setDropdownL] = useState(false)
+  const [dropdownR, setDropdownR] = useState(false)
+  const navigate = useNavigate()
+  
+  const openCloseDropdownL = () => setDropdownL(!dropdownL)
+  const openCloseDropdownR = () => setDropdownR(!dropdownR)
 
   useEffect(()=>{
     if (localStorage.getItem('idUser')) {
@@ -26,20 +32,6 @@ function Navbar(){
       setSuccessfullyLogin(getLogin)
     }
   }, [])
-
-  const navigate = useNavigate()
-
-  const [dropdownL, setDropdownL] = useState(false)
-  
-  const openCloseDropdownL = () => {
-    setDropdownL(!dropdownL)
-  }
-
-  const [dropdownR, setDropdownR] = useState(false)
-
-  const openCloseDropdownR = () => {
-    setDropdownR(!dropdownR)
-  }
 
   return(
     
