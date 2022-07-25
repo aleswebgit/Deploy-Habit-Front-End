@@ -35,14 +35,15 @@ function LoginForm (){
         // }
       ).then(response => {
         console.log(response.data)
-        // localStorage.setItem('token', response.data.token)
         const accessToken = response?.data?.token
         const roles = response?.data?.roles
         const idUser = response?.data?.idUser
         
-        setAuth({ email, idUser, roles, accessToken })
-        // set localStorage successfullyLogin = true
+        localStorage.setItem('token', accessToken)
         localStorage.setItem('successfullyLogin', true)
+        // localStorage.setItem('roles', roles)
+        localStorage.setItem('idUser', idUser)
+        setAuth({ email, idUser, roles, accessToken })
         setEmail('')
         setPassword('')
       })

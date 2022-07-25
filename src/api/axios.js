@@ -4,7 +4,8 @@ export default axios.create({
   baseURL: 'http://localhost:5050',
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin' : '*'
+    'Access-Control-Allow-Origin' : '*',
+    'x-access-token': localStorage.getItem('token')
   },
   withCredentials: true
 })
