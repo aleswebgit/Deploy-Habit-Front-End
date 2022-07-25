@@ -5,12 +5,14 @@ import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React,{useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from '../api/axios'
 // import AuthContext from '../context/AuthProvider'
 
 function Navbar(){
   // const { idUser } = useContext(AuthContext)
   // const { auth } = useContext(AuthContext)
   const [idUser, setIdUser] = useState('')
+  const [roles, setRoles] = useState([])
   const [successfullyLogin, setSuccessfullyLogin] = useState(false)
   const [dropdownL, setDropdownL] = useState(false)
   const [dropdownR, setDropdownR] = useState(false)
@@ -18,6 +20,42 @@ function Navbar(){
   
   const openCloseDropdownL = () => setDropdownL(!dropdownL)
   const openCloseDropdownR = () => setDropdownR(!dropdownR)
+  
+  const getUserRoles = async () =>{
+    try {
+      console.log('getUserRoles', idUser)
+      await axios.get(`/users/${idUser}/roles`,
+      ).then(response => {
+        console.log(response.data)
+        const getRoles = response.data.roles.map(role => role.name)
+        setRoles(getRoles)
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const logout = async () => {
+    try {
+      await axios.post('/api/auth/signout',
+      ).then(response => {
+        console.log(response.data)
+        localStorage.removeItem('token')
+        localStorage.removeItem('successfullyLogin')
+        localStorage.removeItem('idUser')
+        setSuccessfullyLogin(false)
+        setIdUser('')
+        setRoles([])
+        navigate('/home')
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(()=>{
+    if (idUser !== '') getUserRoles()
+  }, [idUser])
 
   useEffect(()=>{
     if (localStorage.getItem('idUser')) {
@@ -51,7 +89,9 @@ function Navbar(){
           <DropdownItem aria-level={7} onClick={() => navigate('/about-us')}>Quiénes somos</DropdownItem>
         </DropdownMenu>
       </Dropdown>
-      <CgUserAdd role="button" aria-label='añadir un usuario' type='button' className='text-[#BC4E2A] display-block h-[48px] w-[48px]' onClick={() => navigate('/admin-register')}  />
+      {roles.includes('admin') &&
+        <CgUserAdd role="button" aria-label='añadir un usuario' type='button' className='text-[#BC4E2A] display-block h-[48px] w-[48px]' onClick={() => navigate('/admin-register')}  />
+      }
       <Dropdown isOpen = {dropdownR} toggle = {openCloseDropdownR} className = 'border-transparent ' >
         <DropdownToggle className = 'bg-transparent border-0 '>
           <BiUserCircle aria-label='icono de usuario' className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
@@ -60,7 +100,7 @@ function Navbar(){
           {successfullyLogin
             ? (<>
               <DropdownItem aria-level={2} onClick={() => navigate(`/profile/${idUser}`)}>Mi perfil</DropdownItem>
-              <DropdownItem aria-level={3} onClick={() => navigate('/')}>Desconectar</DropdownItem>
+              <DropdownItem aria-level={3} onClick={logout}>Desconectar</DropdownItem>
             </>)
             : <DropdownItem aria-level={2} onClick={() => navigate('/login')}>Conectar</DropdownItem> 
           }
