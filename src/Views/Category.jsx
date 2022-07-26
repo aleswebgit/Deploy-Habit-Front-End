@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
 import SectionButton from '../Components/SectionButton'
+import Arrow from '../media/icons/Arrow'
 
 const Category = () => {
   const selectCategory = useParams().id
@@ -50,11 +51,14 @@ const Category = () => {
         return (
           <SectionButton 
             key={section._id}
-            text={section.text}
+            title={section.title}
             onClick={() => navigate(`/section/${section._id}`)}
           />
         )
       })}
+      <div className='m-4'>
+        <Arrow />
+      </div>
     </>
   )
 }
