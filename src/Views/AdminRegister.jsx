@@ -16,9 +16,25 @@ function AdminRegister(){
   const [errorMsg, setErrMsg] = useState('')  
   const [success, setSuccess] = useState(false) 
   
-  const errorRegisterAdminAlert = () => toast.dark('no has registrado ningún usuarix, vuelve a intentarlo')
-  const sucessRegisterAdminAlert = () => toast.dark(' usuarix registradx correctamente')
-
+  const errorRegisterAdminAlert = () => toast.error('Registro fallido', { 
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  })
+  
+  const successRegisterAdminAlert = () => toast.success('Nuevo usuarix registradx correctamente', {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  })
 
   useEffect(()=>{
     userRef.current.focus()
@@ -86,7 +102,7 @@ function AdminRegister(){
               </label>
               {success ? (
                 <div className='m-6 flex justify-center'>
-                  <button type='submit' onClick={sucessRegisterAdminAlert} className='h-10 rounded-full bg-[#BC4E2A] px-5 text-white'>Enviar</button>
+                  <button type='submit' onClick={successRegisterAdminAlert} className='h-10 rounded-full bg-[#BC4E2A] px-5 text-white'>Enviar</button>
                   <ToastContainer />
                   
                 </div>) : (

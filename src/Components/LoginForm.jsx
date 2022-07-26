@@ -15,8 +15,25 @@ function LoginForm (){
   const [errorMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false) 
   
-  const errorLoginAlert = () => toast.dark('No te has logueado correctamente')
-  const sucessLoginAlert = () => toast.dark('Te has logueado correctamente')
+  const errorLoginAlert = () => toast.error('No te has logueado correctamente', {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  })
+    
+  const successLoginAlert = () => toast.success('Te has logueado correctamente', {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  })
 
   useEffect(()=>{
     userRef.current.focus()
@@ -94,13 +111,22 @@ function LoginForm (){
               </div>
               <div className='px-4 pb-2 pt-4'>
                 {success ? (
-                  <button type="submit" onClick={sucessLoginAlert} className='text-white m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>accedido</button>
+                  <button type="submit" onClick={successLoginAlert} className='text-white m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>accedido</button>
                 ) : (
                   <div>
                     <button type="submit" onClick={errorLoginAlert} className='text-white m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>
                       no logueado
                     </button>
-                    <ToastContainer />
+                    <ToastContainer 
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover/>
                   </div>
 
                 )}
