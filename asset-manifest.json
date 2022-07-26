@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Deploy-Habit-Front-End/static/css/main.b01d6d19.css",
+    "main.js": "/Deploy-Habit-Front-End/static/js/main.ba002a10.js",
+    "static/media/landingPic.png": "/Deploy-Habit-Front-End/static/media/landingPic.690938a58df39f351651.png",
+    "static/media/bg.jpg": "/Deploy-Habit-Front-End/static/media/bg.08664bc2cef67d7b9748.jpg",
+    "index.html": "/Deploy-Habit-Front-End/index.html",
+    "main.b01d6d19.css.map": "/Deploy-Habit-Front-End/static/css/main.b01d6d19.css.map",
+    "main.ba002a10.js.map": "/Deploy-Habit-Front-End/static/js/main.ba002a10.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b01d6d19.css",
+    "static/js/main.ba002a10.js"
+  ]
+}
