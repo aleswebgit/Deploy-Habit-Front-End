@@ -11,15 +11,7 @@ const Profile = () => {
 
   const userRequest = async () => {
     try {
-      const response = await axios.get(`/users/${userId}`,
-        // {
-        //   headers:{
-        //     'Content-Type' : 'application/json',
-        //     'Access-Control-Allow-Origin' : '*',
-        //     'x-access-token': localStorage.getItem('token')
-        //   },
-        // }
-      )
+      const response = await axios.get(`/users/${userId}`)
       // .then(response => {
       // setUser(response.data)
       // })
