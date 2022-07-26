@@ -15,8 +15,8 @@ const Home = () => {
         <section className='lg:w-2/5 h-full flex justify-center relative'>
           <Title/>
         </section>
-        <section className='lg:w-3/5 h-full'>
-          <CategoryData />
+        <section className='lg:w-3/5 h-full md:m-6 '>
+          <CategoryData/>
         </section>
         <div className='lg:flex lg:fixed lg:bottom-10 bottom-0 lg:left-8'>
           <Inquiry/>

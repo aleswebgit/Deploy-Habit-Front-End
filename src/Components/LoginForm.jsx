@@ -1,16 +1,15 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import axios from '../api/axios'
-import AuthContext from '../context/AuthProvider'
+import {AuthContextProvider} from '../context/AuthContext'
 
 function LoginForm (){
-  const { setAuth } = useContext(AuthContext)
-
+  const { setAuth } = useContext(AuthContextProvider)
   const userRef = useRef()
   const errRef = useRef()
   
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')  
-  const [errorMsg, setErrMsg] = useState('')  
+  const [errorMsg, setErrMsg] = useState('')
   
   useEffect(()=>{
     userRef.current.focus()
@@ -40,13 +39,23 @@ function LoginForm (){
         setPassword('')
       })
       setEmail('')
-      setPassword('')
+      setPassword('') 
       // go to home page after login
       window.location.href = '/home'
-    } catch (error) {
-      console.log(error.response)
+    }catch (err) {
+      if (!err?.response) {
+        setErrMsg('No Server Response')
+      } else if (err.response?.status === 400) {
+        setErrMsg('Missing Username or Password')
+      } else if (err.response?.status === 401) {
+        setErrMsg('Unauthorized')
+      } else {
+        setErrMsg('Login Failed')
+      }
+      errRef.current.focus()
     }
   }
+      
   
   return(
     <section className='flex md:min-h-screen items-stretch'>

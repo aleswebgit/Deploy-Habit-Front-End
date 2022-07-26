@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
 import SectionButton from '../Components/SectionButton'
+import Arrow from '../media/icons/Arrow'
 
 const Category = () => {
   const selectCategory = useParams().id
@@ -55,6 +56,9 @@ const Category = () => {
           />
         )
       })}
+      <div className='m-4'>
+        <Arrow />
+      </div>
     </>
   )
 }
