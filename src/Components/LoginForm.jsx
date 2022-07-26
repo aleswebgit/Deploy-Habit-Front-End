@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import axios from '../api/axios'
-import AuthContext from '../context/AuthProvider'
+import {AuthContextProvider} from '../context/AuthContext'
 
 function LoginForm (){
-  const { setAuth } = useContext(AuthContext)
+  const { setAuth } = useContext(AuthContextProvider)
   const userRef = useRef()
   const errRef = useRef()
   
