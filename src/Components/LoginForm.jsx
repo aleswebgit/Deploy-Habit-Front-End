@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 function LoginForm (){
-  
   const { setAuth } = useContext(AuthContext)
   const userRef = useRef()
   const errRef = useRef()
@@ -34,7 +33,6 @@ function LoginForm (){
       const response = await axios.post('/api/auth/signin', 
         JSON.stringify({email, password}), 
         {
-           
           headers: { 'Content-Type': 'application/json' },
           withCredentials: true
                 

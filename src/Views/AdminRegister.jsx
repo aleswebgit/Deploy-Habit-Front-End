@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react'
 import axios from '../api/axios'
 import Navbar from '../Components/Navbar'
 import Arrow from '../media/icons/Arrow'
+import { ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function AdminRegister(){
@@ -12,12 +14,18 @@ function AdminRegister(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')  
   const [errorMsg, setErrMsg] = useState('')  
+  const [success, setSuccess] = useState(false) 
   
+  const errorRegisterAdminAlert = () => toast.dark('no has registrado ningún usuarix, vuelve a intentarlo')
+  const sucessRegisterAdminAlert = () => toast.dark(' usuarix registradx correctamente')
+
+
   useEffect(()=>{
     userRef.current.focus()
   },[])
   
   useEffect(()=>{
+    
     setErrMsg('')
   },[email, password])
 
@@ -28,6 +36,7 @@ function AdminRegister(){
       email,
       password
     }
+    setSuccess(true)
     console.log(newRegisteredUser)
 
 
@@ -75,10 +84,19 @@ function AdminRegister(){
               <label htmlFor='password' className='w-[269px]'>
                 <input onChange={(e)=>setPassword(e.target.value)} value={password} required id='password' name='password' type='password' className='mt-3 w-full rounded-full p-2 text-center' placeholder='Contraseña' />
               </label>
-              <div className='m-6 flex justify-center'>
-                <button type='submit' className='h-10 rounded-full bg-[#BC4E2A] px-5 text-white'>Enviar</button>
-              </div>
-              <div></div>
+              {success ? (
+                <div className='m-6 flex justify-center'>
+                  <button type='submit' onClick={sucessRegisterAdminAlert} className='h-10 rounded-full bg-[#BC4E2A] px-5 text-white'>Enviar</button>
+                  <ToastContainer />
+                  
+                </div>) : (
+                <div className='m-6 flex justify-center'>
+                  <button type='submit'  onClick={errorRegisterAdminAlert} className='h-10 rounded-full bg-[#BC4E2A] px-5 text-white'>Enviar</button>
+                </div>
+              
+              )}
+
+
             </form>
 
           </div>
