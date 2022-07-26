@@ -112,9 +112,9 @@ function Navbar(){
       }
       <Dropdown isOpen = {dropdownR} toggle = {openCloseDropdownR} className = 'border-transparent ' >
         <DropdownToggle className = 'bg-transparent border-0 '>
-          {successfullyLogin && name !== ''
-            ? name
-            : <BiUserCircle aria-label='icono de usuario' className = 'text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
+          {successfullyLogin && name
+            ? <p className='text-[#BC4E2A] font-bold'>{name}</p>
+            : <BiUserCircle aria-label='icono de usuario' className='text-[#BC4E2A] display-block h-[48px] w-[48px] '/>
           }
         </DropdownToggle >
         <DropdownMenu aria-expanded>
