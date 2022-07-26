@@ -1,12 +1,6 @@
-import React from 'react'
 import { render } from '@testing-library/react'
-import Register from '../Views/UserRegister'
-import UserRegisterForm from '../Components/UserUserRegisterForm'
+import UserRegisterForm from '../Components/UserRegisterForm'
 
 test ( 'render Register view' ,() => {
-  render (<Register />)
-    
-  const view = render (<UserRegisterForm /> )
-  console.log(view)
-
+  render(<UserRegisterForm />)
 })
