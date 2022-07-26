@@ -19,14 +19,14 @@ function RoutesConfig(){
 
     <Router>
       <Routes>
-        <Routes path="/" element = {<PublicRoute />}>
+        <Route path="/" element = {<PublicRoute />}>
           <Route index element={ <Landing/> } />
           <Route path={HOME} element={ <Home/> } />
           <Route path={LOGIN} element={ <Login/> } />
           <Route path={CATEGORY} element={ <Category/> } />
           <Route path={SECTION} element={ <Section/> } />
           <Route path={ABOUTUS} element={ <AboutUs/> } />
-        </Routes>
+        </Route>
         <Route path ={PRIVATE} element = {<PrivateRoute />}>
           <Route path={USERREGISTER} element={ <UserRegister/> } />
           <Route path={ADMINREGISTER} element={ <AdminRegister/> } />
