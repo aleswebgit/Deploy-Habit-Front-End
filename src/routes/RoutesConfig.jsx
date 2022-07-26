@@ -11,6 +11,7 @@ import Landing from '../Views/Landing'
 
 
 function RoutesConfig(){
+  
   return(
 
     <Router>

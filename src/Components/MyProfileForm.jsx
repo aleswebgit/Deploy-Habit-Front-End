@@ -1,15 +1,30 @@
-
-
+import { useState } from 'react'
 
 function MyProfileForm(){
+  const [read, setRead] = useState(true)
+
+  const handleEditOption = (e) => {
+    e.preventDefault()
+    setRead(false)
+  }
+
+  const updateProfile = (e) => {
+    e.preventDefault()
+    setRead(true)
+  }
+
   return(
-    <form className="p-4 bg-[#F8D1B4] w-[313px] mx-auto rounded-3xl">
-      <h1 className="flex p-2 text-2xl items-center justify-center text-center text-[#BC4E2A] uppercase">AYÚDANOS A SABER MÁS DE TÍ</h1>
+    <form 
+      onSubmit={updateProfile}
+      className="p-4 bg-[#F8D1B4] w-[313px] mx-auto rounded-3xl"
+    >
+      <h1 className="flex p-2 text-2xl items-center justify-center text-center text-[#BC4E2A] uppercase">Tus datos</h1>
       <label className="w-full">
         <input
           name="name"
           type="text"
           className="mt-6 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Nombre"/>
       </label>
       <label className="w-full">
@@ -17,13 +32,23 @@ function MyProfileForm(){
           name="address1"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Apellidos"/>
+      </label>
+      <label className="w-full">
+        <input
+          name="email"
+          type="email"
+          className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
+          placeholder="Email"/>
       </label>
       <label className="w-full">
         <input
           name="address1"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Edad"/>
       </label>
       <label className="w-full">
@@ -31,6 +56,7 @@ function MyProfileForm(){
           name="address2"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Dirección"/>
       </label>
       <label className="w-full">
@@ -38,6 +64,7 @@ function MyProfileForm(){
           name="city"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Ciudad"/>
       </label>
       <label className="w-full">
@@ -45,6 +72,7 @@ function MyProfileForm(){
           name="state"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Provicia"/>
       </label>
       <label className="w-full">
@@ -52,6 +80,7 @@ function MyProfileForm(){
           name="zip"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Código Postal"/>
       </label>
       <label className="w-full">
@@ -59,6 +88,7 @@ function MyProfileForm(){
           name="country"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Nacionalidad"/>
       </label>
       <label className="w-full">
@@ -66,12 +96,14 @@ function MyProfileForm(){
           name="telephone"
           type="text"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder="Teléfono"/>
       </label>
       <label className="w-full">
         <select
           name="message"
           className="mt-3 rounded-full text-center w-full p-2"
+          readOnly={read}
           placeholder=" Me identifico como..">
           <option value="me identifico como..." className= "placeholder:text">Me identifico como..</option>
           <option value="asf">hombre</option>
@@ -82,11 +114,14 @@ function MyProfileForm(){
         </select>
       </label>
       <div className="m-6 flex justify-center">
-        <button
-          type="submit"
-          className="h-10 px-5 bg-[#BC4E2A] rounded-full text-white">
-            Editar
-        </button>
+        { read 
+          ? (<button
+            className="h-10 px-5 bg-[#BC4E2A] rounded-full text-white"
+            onClick={handleEditOption}
+          >
+          Editar
+          </button>) 
+          : <button className="h-10 px-5 bg-[#BC4E2A] text-white rounded-full">Guardar</button> }
       </div>
       <div>
       </div>

@@ -10,7 +10,7 @@ h1{
     font-family: 'Titan One';
 }
 
-a:link, a:visited,  a:hover, a:active
+a:visited, a:hover, a:active
 {
     color: rgb(26, 25, 25);
     text-decoration: none;
@@ -21,3 +21,10 @@ svg,path{
     height: 60px;
 }
 
+a:link{
+    color: rgb(26, 25, 25);
+}
+
+div,p,a:link,#links {
+    text-decoration: none;
+}

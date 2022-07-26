@@ -10,7 +10,7 @@ function Landing(){
   useEffect(() => {
     setTimeout(() => {
       navigate('/home')
-    }, 2000)
+    }, 3000)
   }, [])
  
 
