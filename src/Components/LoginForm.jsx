@@ -1,6 +1,9 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import axios from '../api/axios'
 import AuthContext from '../context/AuthProvider'
+import { ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 
 function LoginForm (){
   const { setAuth } = useContext(AuthContext)
@@ -12,6 +15,9 @@ function LoginForm (){
   const [errorMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false) 
   
+  const errorAlert = () => toast.dark('No te has logueado correctamente')
+
+
   useEffect(()=>{
     userRef.current.focus()
   },[])
@@ -45,11 +51,11 @@ function LoginForm (){
       if (!err?.response) {
         setErrMsg('No Server Response')
       } else if (err.response?.status === 400) {
-        setErrMsg('Missing Username or Password')
+        setErrMsg('')
       } else if (err.response?.status === 401) {
-        setErrMsg('Unauthorized')
+        setErrMsg({errorAlert})
       } else {
-        setErrMsg('Login Failed')
+        setErrMsg('')
       }
       errRef.current.focus()
     }
@@ -91,8 +97,13 @@ function LoginForm (){
                 {success ? (
                   <button type="submit" className='text-white m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>accedido</button>
                 ) : (
+                  <div>
+                    <button type="submit" onClick={errorAlert} className='text-white m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>
+                      no logueado
+                    </button>
+                    <ToastContainer />
+                  </div>
 
-                  <button type="submit" className='text-white m-auto block w-40 justify-center rounded-full bg-orange-500 p-2 text-lg uppercase hover:bg-orange-600 focus:outline-none'>no logueado</button>
                 )}
               </div>
             </form>
